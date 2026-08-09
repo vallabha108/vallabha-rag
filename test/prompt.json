@@ -1,0 +1,68 @@
+{
+  "description": "Evaluation prompts for the vallabha-vle-docs RAG corpus. Grounded in ICT_India_Working_Paper_60.pdf (Digital Mental Health Initiatives in India, Wadhwa 2021) and ict-masterplan-final-.pdf (Healthcare ICT Master Plan, Ministry of Health, Kingdom of Bhutan). Categories: factual (single-chunk lookup), synthesis (multi-chunk reasoning), cross-document (needs both PDFs), out-of-scope (answer is NOT in the corpus - the model should abstain; used to measure hallucination).",
+  "prompts": [
+    {
+      "id": "manas-platform",
+      "category": "factual",
+      "reference_docs": ["ICT_India_Working_Paper_60.pdf"],
+      "question": "What is MANAS, when was it launched, and which organizations developed it?",
+      "expected_output": "MANAS (Mental Health and Normalcy Augmentation System) is a national digital platform launched by the Government of India on 14th April 2021 to enhance the mental wellbeing of Indian citizens. It was initiated by the Office of the Principal Scientific Adviser and jointly developed by NIMHANS Bengaluru, C-DAC Bengaluru, and the Armed Forces Medical College (AFMC) Pune. The initial mobile app targets positive mental health in the 15-35 years age group."
+    },
+    {
+      "id": "emanas-modules",
+      "category": "factual",
+      "reference_docs": ["ICT_India_Working_Paper_60.pdf"],
+      "question": "What are the four modules of the e-Manas Karnataka platform?",
+      "expected_output": "The e-Manas Karnataka platform has four modules: 1) Mental Health Directory Portal (registration portal), 2) Mental Healthcare Authority and Mental Health Review Board (MHA/MHRB) Portal, 3) Clinical Module, and 4) Patient Portal."
+    },
+    {
+      "id": "india-mental-health-burden",
+      "category": "factual",
+      "reference_docs": ["ICT_India_Working_Paper_60.pdf"],
+      "question": "According to the working paper, how many people in India were suffering from mental illness in 2017, and what is India's suicide rate?",
+      "expected_output": "Around 200 million people in India were suffering from mental illness in 2017. India has the highest suicide rate in the South Asia region: 16.5 suicides per 100,000 people, with one person dying by suicide every 40 seconds."
+    },
+    {
+      "id": "project-essence",
+      "category": "factual",
+      "reference_docs": ["ICT_India_Working_Paper_60.pdf"],
+      "question": "What is Project ESSENCE, who runs it, and who funds it?",
+      "expected_output": "Project ESSENCE ('Enabling translation of Science to Service to Enhance Depression Care') is a five-year project (2017-2022) launched by Sangath, a Goa-based not-for-profit organization. It is funded by the US National Institute of Mental Health and is a collaborative work of Harvard University, various partners in South Asia, and the government of Madhya Pradesh."
+    },
+    {
+      "id": "bhutan-strategic-thrusts",
+      "category": "synthesis",
+      "reference_docs": ["ict-masterplan-final-.pdf"],
+      "question": "What are the five strategic thrusts of Bhutan's Healthcare ICT Master Plan?",
+      "expected_output": "The five strategic thrusts are: 1) Effective disease prevention and control, 2) Improving care accessibility, 3) Improving patient experience, 4) Better visibility of medical equipment and supplies usage, and 5) Greater ICT value to the healthcare industry."
+    },
+    {
+      "id": "bhutan-masterplan-rationale",
+      "category": "synthesis",
+      "reference_docs": ["ict-masterplan-final-.pdf"],
+      "question": "Why does Bhutan's Ministry of Health need a healthcare ICT master plan, according to the foreword and executive summary?",
+      "expected_output": "The Constitution of the Kingdom of Bhutan mandates free health care for its citizens, and the Ministry of Health must fulfil this mandate while facing a shortage of human resources and rising costs. To continue funding free healthcare, the MOH must curb wastage and deliver care more efficiently while meeting the aspirations of a more informed population. ICT is seen as a key enabler to provide accessible, convenient and cost-effective health care services, and the master plan aligns with the 11th Five Year Plan and the e-Gov plan of the Ministry of Information and Communications."
+    },
+    {
+      "id": "cross-doc-digital-health",
+      "category": "cross-document",
+      "reference_docs": ["ICT_India_Working_Paper_60.pdf", "ict-masterplan-final-.pdf"],
+      "question": "Compare how India and Bhutan are approaching digital health according to these documents: what kind of initiatives does each country pursue?",
+      "expected_output": "India's approach (per the working paper) is centred on targeted digital mental health initiatives: national and state platforms such as MANAS and e-Manas Karnataka, plus pilot projects like Project ESSENCE, aimed at closing the mental healthcare gap. Bhutan's approach (per the master plan) is a comprehensive, whole-of-system Healthcare ICT Master Plan by the Ministry of Health, organised around five strategic thrusts covering disease prevention, care accessibility, patient experience, medical equipment visibility, and ICT capability building, aligned with national five-year planning."
+    },
+    {
+      "id": "out-of-scope-blockchain",
+      "category": "out-of-scope",
+      "reference_docs": [],
+      "question": "What does Bhutan's Healthcare ICT Master Plan say about using blockchain for patient health records?",
+      "expected_output": "The documents do not discuss blockchain. A correct answer must state that this information is not present in the provided documents rather than inventing an answer."
+    },
+    {
+      "id": "out-of-scope-budget",
+      "category": "out-of-scope",
+      "reference_docs": [],
+      "question": "What was the total budget in US dollars allocated to the MANAS platform?",
+      "expected_output": "The working paper does not state a budget figure for MANAS. A correct answer must state that this information is not present in the provided documents rather than inventing a number."
+    }
+  ]
+}
