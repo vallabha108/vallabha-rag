@@ -1,42 +1,22 @@
 {
   "run": {
-    "timestamp": "2026-08-09T14:51:21.894058+00:00",
+    "timestamp": "2026-08-08T15:14:44.878293+00:00",
     "project": "vallabha-systems-vle",
     "location": "europe-west4",
     "corpus": "vallabha-vle-docs",
-    "generation_model": "gemma4",
-    "backend": "ollama",
-    "top_k": 5,
-    "evaluated_at": "2026-08-09T15:39:59.706315+00:00",
-    "judge_model": "gemma4",
-    "judge_backend": "Ollama local (http://localhost:11434)"
+    "generation_model": "gemini-3.5-flash",
+    "top_k": 5
   },
-  "summary": {
-    "opik": {
-      "answer_relevance": 0.9956,
-      "hallucination": 0.0,
-      "context_precision": 0.7889,
-      "context_recall": 0.8778
-    },
-    "deepeval": {
-      "answer_relevancy": 1.0,
-      "faithfulness": 1.0,
-      "contextual_precision": 0.7603,
-      "contextual_recall": 0.6667,
-      "hallucination": 0.6
-    }
-  },
-  "cases": [
+  "results": [
     {
       "id": "manas-platform",
-      "top_k": 5,
       "category": "factual",
       "reference_docs": [
         "ICT_India_Working_Paper_60.pdf"
       ],
       "question": "What is MANAS, when was it launched, and which organizations developed it?",
       "expected_output": "MANAS (Mental Health and Normalcy Augmentation System) is a national digital platform launched by the Government of India on 14th April 2021 to enhance the mental wellbeing of Indian citizens. It was initiated by the Office of the Principal Scientific Adviser and jointly developed by NIMHANS Bengaluru, C-DAC Bengaluru, and the Armed Forces Medical College (AFMC) Pune. The initial mobile app targets positive mental health in the 15-35 years age group.",
-      "answer": "MANAS stands for \"Mental Health and Normalcy Augmentation System\" and is a national platform launched on April 14th, 2021, to enhance the mental wellbeing of Indian citizens. It was initiated by the Office of the Principal Scientific Adviser, Government of India (GoI) and jointly developed by National Institute of Mental Health and Neuro Sciences (NIMHANS) Bengaluru, Centre for Development of Advanced Computing(C-DAC) Bengaluru, and Armed Forces Medical College (AFMC) Pune.",
+      "answer": "**What is MANAS:** \nMANAS (Mental Health and Normalcy Augmentation System) is a national community mental-health digital platform designed to enhance the mental wellbeing of Indian citizens.\n\n**When it was launched:** \nApril 14, 2021.\n\n**Organizations that developed it:** \nIt was initiated by the Office of the Principal Scientific Adviser, Government of India, and jointly developed by:\n* National Institute of Mental Health and Neuro Sciences (NIMHANS), Bengaluru\n* Centre for Development of Advanced Computing (C-DAC), Bengaluru\n* Armed Forces Medical College (AFMC), Pune",
       "contexts": [
         {
           "text": "The boom in internet access and telecommunications provide an apt opportunity for India to fill \r\nthe large gap that exists in the provision of mental healthcare services. Digital technologies can \r\nprovide a crucial platform for scaling up mental healthcare in India. Some of the digital tools \r\nthat are being explored to improve mental health include tele-psychiatry, tele-consultation, \r\nmental health apps and games, digital assessment, digital therapeutic approaches, virtual \r\ntranining and clinical support, personal health trackers, social media websites, online peer \r\nsupport forums, meditation and mental wellness apps and many more(Roland et al. 2020). \r\nDigital Platforms \r\nMANAS \r\nOn 14th April, 2021, the Government of India launched \u201cMental Health and Normalcy \r\nAugmentation System (MANAS)\u201d, a national platform to enhance mental wellbeing of the \r\nIndian citizens((Office of Principal Scientific Advisor, Government of India 2021). It was initiated \r\nby the Office of the Principal Scientific Adviser, Government of India (GoI) and jointly developed \r\nby National Institute of Mental Health and Neuro Sciences (NIMHANS) Bengaluru, Centre for \r\nDevelopment of Advanced Computing(C-DAC) Bengaluru and Armed Forces Medical College \r\n(AFMC) Pune. MANAS platform is an integration of work by various government ministries, \r\nnational bodies and research institutions. The initial mobile app version launched by the \r\nGovernment of India aims to encourage positive mental health in the 15-35 years age group. In \r\nfuture, the platform intends to be multi-lingual and be integrated with various public health \r\n3 https://egazette.nic.in/WriteReadData/2017/175248.pdf\r\n4 https://www.nhp.gov.in/national-mental-health-programme_pg\r\n5 https://mhca2017.com/index.php/act/chapter-viii-state-mental-health-authority\r\n6 http://www.pharmabiz.com/NewsDetails.aspx?aid=112272&sid=1\r\n7 https://ddc.delhi.gov.in/school-clinics-in-government-schools/CSD Working Paper Series: Digital Mental Health Initiatives in India\r\n5\r\nschemes in India such as the National Health Mission (NHM), National Nutrition Mission \r\n(Poshan Abhiyan) and e-Sanjeevani. \r\ne-Manas: Karnataka Mental Healthcare Management System \r\nOn 26th June 2020, the Government of Karnataka launched an online portal \u201ce-Manas: \r\nKarnataka Mental Healthcare Management System\u201d for the purpose of delivering mental health \r\nservices across the state (International Institute of Information Technology-Bangalore 2021). It \r\nis the first of its kind in India. e-Manas platform aims \u201cto propel the digitization of mental \r\nhealthcare services and will help provide compliance with the Mental Health Care Act, 2017 and \r\nRules (2018)\u201d(International Institute of Information Technology-Bangalore 2021). It is a state\ufffdwide digital registry providing services for mental health professionals (MHPs), mental health \r\nestablishments (MHEs), person with mental illnesses (PwMIs) and their treatment records. This \r\nportal has been developed in collaboration with International Institute of Information \r\nTechnology Bangalore (IIITB), via its E-Health Research Center (EHRC) and National Institute of \r\nMental Health and Neurosciences (NIMHANS), Bangalore. e-Manas Karnataka platform brings \r\ntogether all the stakeholders working in the domain of mental health in Karnataka under one \r\nroof. These include Karnataka Mental Health Authority, Karnataka Mental Health Review Board, \r\nmental health care establishments (both public and private), mental health care professionals \r\n(psychiatrists, psychologists, social workers, mental health nurses etc.),persons suffering from \r\nmental illnesses and their caregivers.\r\n\u201cThe e-Manas system will allow health information about patients to be accessed by their \r\ndoctor, with their consent, at any time and any clinic or hospital, thus significantly improving \r\nthe quality of medical care that can be provided(Suraksha P 2020).\u201d It facilitates online \r\nregistration of mental health establishments (MHEs) and mental health professionals (MHPs), \r\nprovides a platform for recording basic medical records (BMR)of patients seeking both OPD\r\n(outpatient department) and IPD (in patient department) mental healthcare service, provides \r\naccess to patient\u2019s basic health records (with patient\u2019s consent) by registered mental health \r\nprofessionals, enables redressal of grievances by patients and caregivers, and permits\r\nintegration with other health care services such as Ayushman Bharath \u2013 Arogya Karnataka, 104, \r\nand 108(The News Minute 2020).",
@@ -63,69 +43,17 @@
           "source": "ICT_India_Working_Paper_60.pdf",
           "score": 0.3863225132100565
         }
-      ],
-      "opik": {
-        "answer_relevance": {
-          "score": 1.0,
-          "reason": "The answer is perfectly relevant and highly accurate. It addresses all three parts of the user's query\u2014the full name/purpose (What is MANAS), the launch date (When was it launched), and the development organizations (Which organizations developed it)\u2014using information directly provided in the context."
-        },
-        "hallucination": {
-          "score": 0.0,
-          "reason": "['The output accurately states the full form of MANAS as found in the context: \"Mental Health and Normalcy Augmentation System.\"', 'The launch details (April 14th, 2021, national platform to enhance mental wellbeing) are directly quoted from the context.', 'The initiator (Office of the Principal Scientific Adviser, Government of India - GoI) is correctly identified as per the CONTEXT.', 'The joint developers (NIMHANS Bengaluru, C-DAC Bengaluru, and AFMC Pune) are listed exactly as provided in the CONTEXT.']"
-        },
-        "context_precision": {
-          "score": 0.8,
-          "reason": "The answer provided is highly accurate and successfully answers all components of the user's query (what MANAS is, when it launched, and who developed it). The information drawn from the context regarding the acronym expansion, launch date (April 14th, 2021), purpose, initiator (Office of the Principal Scientific Adviser), and developer organizations (NIMHANS, C-DAC, AFMC) is correct. However, the Expected Output contained an additional specific detail\u2014that the initial mobile app targets the '15-35 years age group'\u2014which was present in the context but omitted from the generated answer. Because the omission is a single piece of supplementary information and does not compromise the overall accuracy or completeness of the primary answers (definition, date, developers), the score is set to 0.8 (Highly Accurate)."
-        },
-        "context_recall": {
-          "score": 0.95,
-          "reason": "The response demonstrates an extremely high level of context recall and accuracy. It successfully identifies the full form of MANAS ('Mental Health and Normalcy Augmentation System'), the launch date (April 14th, 2021), the purpose (enhance mental wellbeing of Indian citizens), and accurately lists both the initiating body (Office of the Principal Scientific Adviser) and all joint developers (NIMHANS Bengaluru, C-DAC Bengaluru, and AFMC Pune). All these points are directly verifiable within the provided context.\n\nThe score is not 1.0 only because the response omits one specific detail mentioned in the Expected Output: that 'The initial mobile app targets positive mental health in the 15-35 years age group.' However, this omission of a single supporting clause does not diminish the factual accuracy or comprehensiveness of the core answer structure relative to the user's main questions (What is it? When launched? Who developed it?). Therefore, the response is nearly perfect."
-        }
-      },
-      "deepeval": {
-        "answer_relevancy": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the answer fully and accurately addressed all components of the input query without including any irrelevant information.",
-          "success": true
-        },
-        "faithfulness": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because there are no listed contradictions, indicating that the actual output is perfectly faithful to the retrieval context!",
-          "success": true
-        },
-        "contextual_precision": {
-          "score": 0.8333,
-          "reason": "The score is 0.83 because while the most comprehensive information is correctly placed at Rank 1, the ranking is penalized by an irrelevant node appearing at Rank 2. For a higher score, all relevant nodes must be ranked above any irrelevant nodes. Specifically, the context at Rank 2 states: \"This document focuses on other digital mental health initiatives like 'e-Manas: Karnataka Mental Healthcare Management System' and Project ESSENCE. While it discusses general digital platforms, it does not provide the specific definition, launch date, or developers of MANAS required to answer the question.\" This irrelevant node should be ranked lower than both the highly relevant context at Rank 1 and the supporting context at Rank 3.",
-          "success": true
-        },
-        "contextual_recall": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because every detail mentioned in the expected output, including the launch date, developers, and target age group for MANAS, is fully supported by node(s) in retrieval context.",
-          "success": true
-        },
-        "hallucination": {
-          "score": 0.3333,
-          "reason": "The score is 0.33 because while the actual output correctly identifies the existence and source of MANAS, it includes highly specific details (full name, exact launch date, and joint developers) that are not present or verifiable within the provided academic citations/context.",
-          "success": true
-        }
-      },
-      "mitigation": {
-        "flags": [
-          "deepeval.hallucination=0.33"
-        ],
-        "advice": "Root cause: Generation/prompt problem\n\n- [SYSTEM] Modify the grounding prompt to explicitly penalize adding details not directly supported by quotes from the provided context, e.g., \"Do not infer names or dates; only quote the text.\"\n- [SYSTEM] Increase `top_k` slightly (e.g., 7) on re-uploading documentation chunks of this type (academic reports) to ensure more diverse, peripheral details are available for grounding attempts.\n- [PROMPT] If possible, update the test case's expected output to match only the core facts *verifiable* from the retrieved chunk source, thereby training the judge/system on a lower bar."
-      }
+      ]
     },
     {
       "id": "emanas-modules",
-      "top_k": 5,
       "category": "factual",
       "reference_docs": [
         "ICT_India_Working_Paper_60.pdf"
       ],
       "question": "What are the four modules of the e-Manas Karnataka platform?",
       "expected_output": "The e-Manas Karnataka platform has four modules: 1) Mental Health Directory Portal (registration portal), 2) Mental Healthcare Authority and Mental Health Review Board (MHA/MHRB) Portal, 3) Clinical Module, and 4) Patient Portal.",
-      "answer": "The four modules of the e-Manas Karnataka platform are:\n1. Mental Health Directory Portal\n2. Mental Healthcare Authority and Mental Health Review Board (MHA/MHRB) Portal\n3. Clinical Module\n4. Patient Portal",
+      "answer": "Based on the provided documents, the four modules of the e-Manas Karnataka platform are:\n\n1. Mental Health Directory Portal\n2. Mental Healthcare Authority and Mental Health Review Board (MHA/MHRB) Portal\n3. Clinical Module\n4. Patient Portal",
       "contexts": [
         {
           "text": "The boom in internet access and telecommunications provide an apt opportunity for India to fill \r\nthe large gap that exists in the provision of mental healthcare services. Digital technologies can \r\nprovide a crucial platform for scaling up mental healthcare in India. Some of the digital tools \r\nthat are being explored to improve mental health include tele-psychiatry, tele-consultation, \r\nmental health apps and games, digital assessment, digital therapeutic approaches, virtual \r\ntranining and clinical support, personal health trackers, social media websites, online peer \r\nsupport forums, meditation and mental wellness apps and many more(Roland et al. 2020). \r\nDigital Platforms \r\nMANAS \r\nOn 14th April, 2021, the Government of India launched \u201cMental Health and Normalcy \r\nAugmentation System (MANAS)\u201d, a national platform to enhance mental wellbeing of the \r\nIndian citizens((Office of Principal Scientific Advisor, Government of India 2021). It was initiated \r\nby the Office of the Principal Scientific Adviser, Government of India (GoI) and jointly developed \r\nby National Institute of Mental Health and Neuro Sciences (NIMHANS) Bengaluru, Centre for \r\nDevelopment of Advanced Computing(C-DAC) Bengaluru and Armed Forces Medical College \r\n(AFMC) Pune. MANAS platform is an integration of work by various government ministries, \r\nnational bodies and research institutions. The initial mobile app version launched by the \r\nGovernment of India aims to encourage positive mental health in the 15-35 years age group. In \r\nfuture, the platform intends to be multi-lingual and be integrated with various public health \r\n3 https://egazette.nic.in/WriteReadData/2017/175248.pdf\r\n4 https://www.nhp.gov.in/national-mental-health-programme_pg\r\n5 https://mhca2017.com/index.php/act/chapter-viii-state-mental-health-authority\r\n6 http://www.pharmabiz.com/NewsDetails.aspx?aid=112272&sid=1\r\n7 https://ddc.delhi.gov.in/school-clinics-in-government-schools/CSD Working Paper Series: Digital Mental Health Initiatives in India\r\n5\r\nschemes in India such as the National Health Mission (NHM), National Nutrition Mission \r\n(Poshan Abhiyan) and e-Sanjeevani. \r\ne-Manas: Karnataka Mental Healthcare Management System \r\nOn 26th June 2020, the Government of Karnataka launched an online portal \u201ce-Manas: \r\nKarnataka Mental Healthcare Management System\u201d for the purpose of delivering mental health \r\nservices across the state (International Institute of Information Technology-Bangalore 2021). It \r\nis the first of its kind in India. e-Manas platform aims \u201cto propel the digitization of mental \r\nhealthcare services and will help provide compliance with the Mental Health Care Act, 2017 and \r\nRules (2018)\u201d(International Institute of Information Technology-Bangalore 2021). It is a state\ufffdwide digital registry providing services for mental health professionals (MHPs), mental health \r\nestablishments (MHEs), person with mental illnesses (PwMIs) and their treatment records. This \r\nportal has been developed in collaboration with International Institute of Information \r\nTechnology Bangalore (IIITB), via its E-Health Research Center (EHRC) and National Institute of \r\nMental Health and Neurosciences (NIMHANS), Bangalore. e-Manas Karnataka platform brings \r\ntogether all the stakeholders working in the domain of mental health in Karnataka under one \r\nroof. These include Karnataka Mental Health Authority, Karnataka Mental Health Review Board, \r\nmental health care establishments (both public and private), mental health care professionals \r\n(psychiatrists, psychologists, social workers, mental health nurses etc.),persons suffering from \r\nmental illnesses and their caregivers.\r\n\u201cThe e-Manas system will allow health information about patients to be accessed by their \r\ndoctor, with their consent, at any time and any clinic or hospital, thus significantly improving \r\nthe quality of medical care that can be provided(Suraksha P 2020).\u201d It facilitates online \r\nregistration of mental health establishments (MHEs) and mental health professionals (MHPs), \r\nprovides a platform for recording basic medical records (BMR)of patients seeking both OPD\r\n(outpatient department) and IPD (in patient department) mental healthcare service, provides \r\naccess to patient\u2019s basic health records (with patient\u2019s consent) by registered mental health \r\nprofessionals, enables redressal of grievances by patients and caregivers, and permits\r\nintegration with other health care services such as Ayushman Bharath \u2013 Arogya Karnataka, 104, \r\nand 108(The News Minute 2020).",
@@ -152,63 +80,17 @@
           "source": "ICT_India_Working_Paper_60.pdf",
           "score": 0.39008245638052574
         }
-      ],
-      "opik": {
-        "answer_relevance": {
-          "score": 1.0,
-          "reason": "The answer directly and completely answers the user's factual question by listing the four modules of the e-Manas Karnataka platform. The information provided is highly specific and is accurately retrieved from a key section within the provided context."
-        },
-        "hallucination": {
-          "score": 0.0,
-          "reason": "['The output accurately lists the four modules of the e-Manas Karnataka platform.', 'This information is directly copied from the context: \"e-Manas Karnataka platform has four modules(see Figure 1)(Karnataka State Mental Healthcare Authority 2020): 1. Mental Health Directory Portal 2. Mental Healthcare Authority and Mental Health Review Board (MHA/MHRB) Portal 3. Clinical Module 4. Patient Portal\".']"
-        },
-        "context_precision": {
-          "score": 0.8,
-          "reason": "The LLM's answer is highly accurate, correctly listing all four modules of the e-Manas Karnataka platform as specified in the context. It achieves full relevance to the user query. The only minor discrepancy preventing a perfect score (1.0) is the omission of the specific clarifying detail\u2014(registration portal)\u2014that was included after 'Mental Health Directory Portal' in the expected output. This omission does not impact the overall accuracy or core completeness of the answer."
-        },
-        "context_recall": {
-          "score": 0.9,
-          "reason": "The LLM's response is highly accurate and directly answers the user's query using specific details provided in the context regarding the e-Manas Karnataka platform modules. It correctly identifies all four required modules: Mental Health Directory Portal, Mental Healthcare Authority and Mental Health Review Board (MHA/MHRB) Portal, Clinical Module, and Patient Portal. The score is very high because it captures almost every piece of information from the expected output. A perfect 1.0 was reserved only for mentioning the clarifying detail 'registration portal' for the first module, which was present in the Expected Output but omitted by the LLM. Despite this minor structural omission, the response demonstrates a near-perfect recall and understanding of the source material."
-        }
-      },
-      "deepeval": {
-        "answer_relevancy": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the response directly and completely answers the query regarding the four modules of the e-Manas Karnataka platform, with no irrelevant information present.",
-          "success": true
-        },
-        "faithfulness": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because there are no listed contradictions, indicating that the actual output is perfectly faithful to the retrieval context!",
-          "success": true
-        },
-        "contextual_precision": {
-          "score": 0.8333,
-          "reason": "The score is 0.83 because while the most relevant information appears at Rank 1 and Rank 3, indicating strong retrieval performance, the ranking could be improved. Specifically, the node at Rank 2, which states \"This segment provides general details about the e-Manas platform's functions (e.g., recording BMR, OPD/IPD services) but does not contain the specific list of four modules required to answer the question,\" is ranked higher than necessary. This moderately useful irrelevant node should be placed below other highly irrelevant nodes in retrieval contexts, such as the one at Rank 4 (\"This context is a source citation for the modules list but does not provide unique textual information regarding the four module names that was not already extracted from the preceding contexts.\") and especially the node at Rank 5 (\"This entire section discusses unrelated mental health projects like 'Project ESSENCE' and 'Project Empower,' and makes no mention of the e-Manas Karnataka platform or its modules.\").",
-          "success": true
-        },
-        "contextual_recall": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because all information presented in the expected output is fully and accurately derived from the node(s) in retrieval context, demonstrating perfect recall.",
-          "success": true
-        },
-        "hallucination": {
-          "score": 0.0,
-          "reason": "The score is 0.00 because all factual alignments confirm that the actual output accurately discusses and lists information explicitly provided in the contexts, with no contradictions found.",
-          "success": true
-        }
-      }
+      ]
     },
     {
       "id": "india-mental-health-burden",
-      "top_k": 5,
       "category": "factual",
       "reference_docs": [
         "ICT_India_Working_Paper_60.pdf"
       ],
       "question": "According to the working paper, how many people in India were suffering from mental illness in 2017, and what is India's suicide rate?",
       "expected_output": "Around 200 million people in India were suffering from mental illness in 2017. India has the highest suicide rate in the South Asia region: 16.5 suicides per 100,000 people, with one person dying by suicide every 40 seconds.",
-      "answer": "In 2017, around 200 million people were suffering from mental illness in India. Regarding the suicide rate, it is stated that one person dies every 40 seconds due to suicide with a rate of 16.5 suicides per 100,000 people.",
+      "answer": "According to the working paper:\n\n* **Number of people suffering from mental illness in 2017:** Around 200 million people.\n* **India's suicide rate:** 16.5 suicides per 100,000 people (with one person dying every 40 seconds).",
       "contexts": [
         {
           "text": "CSD Working Paper Series: Towards a New Indian Model of Information and Communications \r\nTechnology-Led Growth and Development\r\nDigital Mental Health Initiatives in India\r\nICT India Working Paper #60\r\nManisha Wadhwa\r\nOctober 2021CSD Working Paper Series: Digital Mental Health Initiatives in India\r\n2\r\nAbstract \r\nThe burden of mental health problems is rising acrossthe world. In South Asia region, the suicide \r\nrate is highest in India with one person dying every 40 seconds due to suicide with 16.5 suicides \r\nper 100,000 people. In 2017, around 200 million people were suffering from mental illness in \r\nIndia. The COVID-19 pandemic has even worsened the mental health situation in the country. \r\nPeople across all age groups suffered from anxiety and depression during COVID-19 lockdown. \r\nSome of the major factors that contribute to the burgeoning mental health burden are scarcity\r\nof mental health specialists particularly in rural areas,limited availability of mental health \r\nservices,limited access to mental health services, stigma associated with mental illnesses and \r\nlimited awareness and knowledge about mental health. \r\nThe Central and state governments have taken various initiatives to deal with the mental health \r\nsituation. These range from policy level initiatives like passing of Mental Health Act in 2017 to \r\ncommunity level mental health programmes. The boom in internet access and \r\ntelecommunications provide an apt opportunity for India to fill the large gap that exists in the \r\nprovision of mental healthcare services.The central government has launched MANAS , a mobile \r\napplication for improving mental wellbeing of citizens, Karnataka Government has launched e\ufffdManas: Karnataka Mental Healthcare Management System and various pilot initiatives have also \r\nbeen taken by state governments in collaboration with private organizations. \r\nThis is a concept paper based on secondary data from various national and international journals, \r\ngovernment and private documents and websites. This paper presents an overview of mental \r\nhealth situation in the country and provides a detailed account of various digital platforms \r\nlaunched and pilot initiatives taken in India to tackle the rising burden of mental health problems. \r\nThe paper also put forward some recommendations to improve the mental health situation in \r\nthe country. \r\nKeywords: Mental Health, Digital, Information and Communications Technology, ICT, IndiaCSD Working Paper Series: Digital Mental Health Initiatives in India\r\n3\r\nIntroduction \r\nThe burden of mental health problems is substantial in India. According to the Global Burden of \r\nDisease study, around 200 million people in India were suffering from mental illness in 2017 \r\nand about half of them suffer from anxiety or depressive disorders(Sagar et al. 2020). World\ufffdwide, India accounts for around one-fourth of all male suicides and more than one-third of all \r\nfemale suicides (India State-Level Disease Burden Initiative Suicide Collaborators 2018). As per \r\nNational Mental Health Survey 2015-2016, around 10% of adults meet diagnostic criteria for a \r\nmental health condition(Murthy 2017; Patel and Balaji 2020). Suicide has been the leading \r\ncause of death among young people in India(Patel et al. 2012; Mascarenhas 2016). \r\nThe impact of COVID-19 on mental health has been tremendous. According to\u2018FEEL-COVID\u2019 \r\nsurvey conducted in February-March 2020 across 64 Indian cities, one-third of 1,106 \r\nparticipants faced significant \u2018psychological impact\u2019 due of COVID-19 (Varshney et al. 2020). A \r\nnumber of other Internet-based surveys have been conducted between March-May 2020 which\r\nalso show high rates of anxiety and depression among the general population(Patel and Balaji \r\n2020). After interviewing 1,102 parents and primary caregivers during the \u201cRapid online \r\nperception study about the effects of COVID-19 on children\u201d, it was found that more than 50% \r\nof children experienced anxiety and agitation issues during COVID-19 lockdown(Bhattacharya \r\n2020). Within 100 days of COVID-19 lockdown, 66 children committed suicide in Kerala1\r\n. An \r\nonline survey conducted with 152 doctors found that more than one-third of them experienced \r\nanxiety and depression during the pandemic(Chatterjee et al. 2020). A study with 1,200 auto \r\ndrivers found that 75% of them experienced anxiety and panic over their work and finances\r\nduring COVID-19 lockdown2\r\n.Due to increased household responsibilities and domestic violence, \r\nwomen also suffered from depression and anxiety issues during COVID-19 lockdown(Patel and \r\nBalaji 2020).",
@@ -235,69 +117,17 @@
           "source": "ICT_India_Working_Paper_60.pdf",
           "score": 0.32939380363499426
         }
-      ],
-      "opik": {
-        "answer_relevance": {
-          "score": 0.98,
-          "reason": "The answer is highly relevant and comprehensive. It directly addresses both parts of the user's query: the number of people suffering from mental illness in India in 2017 (using the 'around 200 million' statistic) and providing the detailed suicide rate statistics ('one person dies every 40 seconds... with a rate of 16.5 suicides per 100,000 people'). All information presented is accurately sourced from multiple sections within the provided context documents."
-        },
-        "hallucination": {
-          "score": 0.0,
-          "reason": "[\"The output states that 'In 2017, around 200 million people were suffering from mental illness in India,' which is directly supported by the CONTEXT.\", \"The output quotes the suicide rate statistics: 'one person dies every 40 seconds due to suicide with a rate of 16.5 suicides per 100,000 people.' This exact information is found in the CONTEXT regarding India's high suicide rate.\"]"
-        },
-        "context_precision": {
-          "score": 0.8,
-          "reason": "The answer is highly accurate and successfully retrieves all key statistics requested by the user (200 million people suffering from mental illness in 2017; suicide rate of 16.5 per 100,000 with one death every 40 seconds). All data points align perfectly with the provided context. The only minor discrepancy is that the LLM fails to include the full contextual framing found in the Expected Output, specifically stating that India has 'the highest suicide rate in the South Asia region.' Because this omission does not diminish the core factual accuracy or relevance of the statistics provided, a high score (0.8) is appropriate."
-        },
-        "context_recall": {
-          "score": 0.9,
-          "reason": "The LLM's response is extremely accurate and successfully retrieves both pieces of data requested by the user based directly on the provided context snippets. It correctly states that around 200 million people in India suffered from mental illness in 2017, and it accurately quotes the suicide rate as 16.5 per 100,000 people, with one person dying every 40 seconds.\n\nThe response aligns almost perfectly with the expected answer, covering all critical numerical metrics and facts (200 million, 2017, 16.5/100,000, 40 seconds). The only minor discrepancy that prevents a perfect 1.0 is that the LLM omits the phrasing 'India has the highest suicide rate in the South Asia region,' which was present in the expected answer but not strictly required for factual recall.\n\nOverall, this demonstrates near-perfect contextual understanding and retrieval of all quantitative information."
-        }
-      },
-      "deepeval": {
-        "answer_relevancy": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the answer fully addresses both parts of the query (mental illness prevalence in India in 2017 and the suicide rate) using information from the working paper, and there were no irrelevant statements found.",
-          "success": true
-        },
-        "faithfulness": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because there are no listed contradictions, indicating that the actual output is perfectly faithful to the retrieval context!",
-          "success": true
-        },
-        "contextual_precision": {
-          "score": 1.0,
-          "reason": "The score of 1.00 is excellent! It means the retrieval system successfully prioritized all necessary information. The relevant nodes are correctly placed at Rank 1 and Rank 2, providing the required statistics (e.g., 'In South Asia region, the suicide rate is highest in India with one person dying every 40 seconds due to suicide with 16.5 suicides per 100,000 people.' and 'around 200 million people in India were suffering from mental illness in 2017'). Crucially, all subsequent nodes (Ranks 3, 4, and 5) are correctly identified as irrelevant because they either 'do not contain the specific statistics' or discuss tangential topics like policy changes, ensuring that the most precise context is always presented first.",
-          "success": true
-        },
-        "contextual_recall": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because every detail presented in the expected output (sentences 1-3) is accurately and completely supported by the information available in node(s) in retrieval context.",
-          "success": true
-        },
-        "hallucination": {
-          "score": 0.4,
-          "reason": "The score is 0.40 because the actual output introduces specific statistics (e.g., 200 million people, 16.5 suicides per 100,000) that are not supported by or mentioned in the provided context, which only consists of citations and links.",
-          "success": true
-        }
-      },
-      "mitigation": {
-        "flags": [
-          "deepeval.hallucination=0.40"
-        ],
-        "advice": "Root cause: Metric artifact (Judge Miscalibration)\n\n*   The score indicates the judge failed to properly ingest and analyze the provided context chunks. The actual answer accurately restates specific facts that must have been present in the retrieved source text; therefore, no hallucination occurred.\n*   No action needed regarding the pipeline configuration. The generation model worked correctly by grounding its response solely on the supplied context material.\n\n**Action Recommendation:** Challenge the DeepEval metric calculation for this case. If re-running with a human expert judge confirms that the context *does* contain the required statistics, the score of 0.40 is invalid and should be dismissed/overridden as an evaluation bug."
-      }
+      ]
     },
     {
       "id": "project-essence",
-      "top_k": 5,
       "category": "factual",
       "reference_docs": [
         "ICT_India_Working_Paper_60.pdf"
       ],
       "question": "What is Project ESSENCE, who runs it, and who funds it?",
       "expected_output": "Project ESSENCE ('Enabling translation of Science to Service to Enhance Depression Care') is a five-year project (2017-2022) launched by Sangath, a Goa-based not-for-profit organization. It is funded by the US National Institute of Mental Health and is a collaborative work of Harvard University, various partners in South Asia, and the government of Madhya Pradesh.",
-      "answer": "Project ESSENCE is a five-year project called \u201cEnabling translation of Science to Service to Enhance Depression Care.\u201d It was launched by Sangath, a Goa based not-for-profit organization, and it is funded by the US National Institute of Mental Health.",
+      "answer": "Based on the provided documents:\n\n*   **What it is:** Project ESSENCE (Enabling translation of Science to Service to Enhance Depression Care) is a five-year (2017\u20132022) project. Its goals are to develop and evaluate digital interventions to train community health (ASHA) workers in delivering depression care, and to strengthen capacity in South Asian countries for conducting implementation research and integrating evidence into health policies. \n*   **Who runs it:** It was launched by **Sangath** (a Goa-based not-for-profit organization) as a collaborative work with **Harvard University**, various partners in South Asia, and the **government of Madhya Pradesh**.\n*   **Who funds it:** It is funded by the **US National Institute of Mental Health**.",
       "contexts": [
         {
           "text": "),persons suffering from \r\nmental illnesses and their caregivers.\r\n\u201cThe e-Manas system will allow health information about patients to be accessed by their \r\ndoctor, with their consent, at any time and any clinic or hospital, thus significantly improving \r\nthe quality of medical care that can be provided(Suraksha P 2020).\u201d It facilitates online \r\nregistration of mental health establishments (MHEs) and mental health professionals (MHPs), \r\nprovides a platform for recording basic medical records (BMR)of patients seeking both OPD\r\n(outpatient department) and IPD (in patient department) mental healthcare service, provides \r\naccess to patient\u2019s basic health records (with patient\u2019s consent) by registered mental health \r\nprofessionals, enables redressal of grievances by patients and caregivers, and permits\r\nintegration with other health care services such as Ayushman Bharath \u2013 Arogya Karnataka, 104, \r\nand 108(The News Minute 2020). \r\n\u201ce-Manas provides a scalable, secure platform for managing mental health data and \r\nworkflows, and is an important step in the digital transformation of mental healthcare(The \r\nNews Minute 2020).\u201d\r\ne-Manas Karnataka platform has four modules(see Figure 1)(Karnataka State Mental \r\nHealthcare Authority 2020): \r\n1. Mental Health Directory Portal\r\n2. Mental Healthcare Authority and Mental Health Review Board (MHA/MHRB) Portal\r\n3. Clinical Module\r\n4. Patient PortalCSD Working Paper Series: Digital Mental Health Initiatives in India\r\n6\r\nFigure 1: e-Manas Karnataka modules \r\nSource: Karnataka State Mental Healthcare Authority. 2020. \u201cE-Manas Karnataka (Mental \r\nHealthcare Management System).\u201d 2020. https://e-manas.karnataka.gov.in/#/about\r\nPilot Initiatives \r\nProject ESSENCE \r\nSangath, a Goa based not-for-profit organization launched a five year (2017-2022) project \r\ncalled \u201cEnabling translation of Science to Service to Enhance Depression Care\u2019 \r\n(ESSENCE)\u201d8\r\n(Sangath 2021a).The project is funded by the US National Institute of Mental \r\nHealth. It is a collaborative work of Harvard University, various partners in South Asia and the \r\ngovernment of Madhya Pradesh. The goals and key components of the project ESSENCE are \r\noutlined in Table 1. \r\n8 https://sangath.in/who-we-are/CSD Working Paper Series: Digital Mental Health Initiatives in India\r\n7\r\nTable 1: Goals and Key Components of Project ESSENCE\r\nGoals\r\n\u2022 Develop and evaluate the effectiveness of digital interventions (compared with face-to\ufffdface training) in matters of training ASHA workers/ govt. accredited community health \r\nworkers in the delivery of HAP (Healthy Activity Programme) for depression care.\r\n\u2022 Strengthen the capacity in South Asian countries to conduct implementation research, \r\ndissemination of its findings and the uptake of this evidence in policy and programmes.\r\nKey Components\r\n\u2022 Three training methods (face to face, digital and digital plus) for community health \r\nworkers to assess the competency to deliver depression care in the primary healthcare \r\nsetting.\r\n\u2022 Remote implementation support strategies for primary healthcare providers to deliver \r\nquality depression care in the primary healthcare setting.\r\n\u2022 Digital courses, mentored fellowships and structured workshops for media professionals, \r\nservice users\u2019 representative organisations, implementation researchers and \r\npolicymakers to increase the knowledge generation, exchange and uptake of the \r\nknowledge into national/state health policies.\r\nSource: Sangath. 2021a. \u201cEnabling Translation of Science to Service to Enhance Depression Care \r\n(ESSENCE).\u201d https://sangath.in/essence-3/\r\nProject Empower \r\nProject Empower is a collaborative effort between the Lakshmi Mittal and Family South Asia \r\nInstitute, Harvard University and the Tata Trusts(The Lakshmi Mittal and Family South Asia \r\nInstitute, Harvard University 2021). Project Empower is an effort that originates from Project \r\nESSENCE. It aims to build a digital platform to virtually train and supervise community health \r\nworkers for identification and treatment of common mental health disorders. Under this \r\nproject, workshops have been conducted in the rural district of Gujarat, in collaboration with \r\nSEWA Rural9 and National Health Mission Gujarat. Project Empower relies on a tripartite \r\napproach: (i) gathering feedback from community health workers, (ii) refining of technological \r\ninfrastructure, and (iii) enhancing the content of digital training.",
@@ -324,69 +154,17 @@
           "source": "ICT_India_Working_Paper_60.pdf",
           "score": 0.4790486066018528
         }
-      ],
-      "opik": {
-        "answer_relevance": {
-          "score": 0.98,
-          "reason": "The answer is highly relevant as it successfully and completely answers all three parts of the user's question ('What is Project ESSENCE?', 'who runs it', and 'who funds it?'). The information provided\u2014the project name, its objective/scope, the launching organization (Sangath), and the funding source (US National Institute of Mental Health)\u2014is directly sourced from the context and perfectly addresses the user's intent. It is only withheld a perfect score because sometimes even highly relevant answers might miss subtle connective details from the text, but overall, it is an excellent, comprehensive response."
-        },
-        "hallucination": {
-          "score": 0.0,
-          "reason": "['The OUTPUT accurately states that Project ESSENCE was a five-year project.', 'The name of the project, \u201cEnabling translation of Science to Service to Enhance Depression Care,\u201d is taken directly from the CONTEXT.', 'The CONTEXT specifies that Sangath, a Goa based not-for-profit organization, launched this project.', 'The funding source listed in the OUTPUT (US National Institute of Mental Health) matches the explicit details provided in the CONTEXT.']"
-        },
-        "context_precision": {
-          "score": 0.8,
-          "reason": "The answer is highly accurate and captures the essential information regarding Project ESSENCE's name, duration, description, and primary funder. It correctly identifies Sangath as the launching organization.\n\nThe deduction from a perfect score (1.0) is due to an omission in listing all collaborating partners/support structures. The Expected Output specifies that while it is funded by the US National Institute of Mental Health, it is *also* a collaborative work involving Harvard University, various partners in South Asia, and the government of Madhya Pradesh. The provided output only mentions the funding source and fails to list these key collaborators mentioned both in the expected answer and the context."
-        },
-        "context_recall": {
-          "score": 0.8,
-          "reason": "The response is highly accurate and addresses the core components of the query (What, Who runs it, Who funds it) using precise information found in the context. It correctly identifies Project ESSENCE's full title, its duration, Sangath as the launcher/organizer, and the funder (US National Institute of Mental Health).\n\nHowever, the response is incomplete because it omits a significant piece of detailed context provided both in the Expected Output and the source material: that Project ESSENCE is also a collaborative work involving 'Harvard University, various partners in South Asia, and the government of Madhya Pradesh.' While the answer is mostly accurate, this substantial omission prevents a perfect score. Therefore, 0.8 represents strong accuracy with minor details missing."
-        }
-      },
-      "deepeval": {
-        "answer_relevancy": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the output was perfectly relevant to all aspects of the input question, and no irrelevant statements were found.",
-          "success": true
-        },
-        "faithfulness": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because there are no listed contradictions, indicating that the actual output is perfectly faithful to the retrieval context!",
-          "success": true
-        },
-        "contextual_precision": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the single most relevant node was perfectly ranked at Rank 1, providing all necessary details about Project ESSENCE. All subsequent nodes are correctly ranked lower; for instance, Node 2 only mentions 'Project Empower,' Node 3 provides only a citation link, and Nodes 4 and 5 discuss unrelated general topics, confirming that the retrieval system successfully prioritized the core information.",
-          "success": true
-        },
-        "contextual_recall": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because every detail in the expected output, including the project name, dates, launching organization (Sangath), funding source, and collaborators, is fully supported by the node(s) in retrieval context.",
-          "success": true
-        },
-        "hallucination": {
-          "score": 0.6667,
-          "reason": "The score is 0.67 because while some core information (Project ESSENCE name) aligns, the output introduces multiple unverified details (Goa location, US NIMH funding, five-year duration) and discusses a primary topic (Project ESSENCE) that is entirely absent from the provided context.",
-          "success": false
-        }
-      },
-      "mitigation": {
-        "flags": [
-          "deepeval.hallucination=0.67"
-        ],
-        "advice": "Root cause: Metric artifact/Overly aggressive LLM-as-judge evaluation\n\n*   [SYSTEM] Update the shared grounding prompt to explicitly mandate citing source material *within* the answer text whenever multiple facts are synthesized from one chunk (e.g., \"The funding is attributed to X [Source Chunk ID]\"). This reduces ambiguity for highly sensitive judges like DeepEval.\n*   [PROMPT] For this specific test case, adjust `top_k` in `test/prompt.json` from 5 to 3. Since the answer comes from a single chunk, reducing retrieval noise increases focus and makes it harder for the model (or judge) to invent phantom sources.\n*   [SYSTEM] Increase the required temperature slightly (e.g., temp=0.1). While counter-intuitive, sometimes very low temperatures yield overly boilerplate text. A minimal increase can encourage slight variation in phrasing that might better satisfy LLM-judge surface area matching without losing factual grounding."
-      }
+      ]
     },
     {
       "id": "bhutan-strategic-thrusts",
-      "top_k": 5,
       "category": "synthesis",
       "reference_docs": [
         "ict-masterplan-final-.pdf"
       ],
       "question": "What are the five strategic thrusts of Bhutan's Healthcare ICT Master Plan?",
       "expected_output": "The five strategic thrusts are: 1) Effective disease prevention and control, 2) Improving care accessibility, 3) Improving patient experience, 4) Better visibility of medical equipment and supplies usage, and 5) Greater ICT value to the healthcare industry.",
-      "answer": "The five strategic thrusts are:\n1. Effective Disease Prevention and Control\n2. Improving Care Accessibility\n3. Improving Patient Experience\n4. Better Visibility of Medical Equipment and Supplies Usage\n5. Greater ICT Value to Healthcare Industry",
+      "answer": "Based on the provided documents, the five strategic thrusts of Bhutan's Healthcare ICT Master Plan are:\n\n1. **Strategic Thrust 1:** Effective Disease Prevention and Control\n2. **Strategic Thrust 2:** Improving Care Accessibility\n3. **Strategic Thrust 3:** Improving Patient Experience (also referred to as Improving Patient Services)\n4. **Strategic Thrust 4:** Better Visibility of Medical Equipment and Supplies Usage\n5. **Strategic Thrust 5:** Greater ICT Value to Healthcare Industry",
       "contexts": [
         {
           "text": "i. Management commitment\r\nii. Support from users\r\niii. Capability development of ICT resources and continued involvement of trained resources \u2013\r\ntraining of ICT resources and working out a procedure with MoIC to ensure that resources are \r\nnot transferred out, thereby affecting key initiatives. \r\niv. Implement a structure for good ICT governance \u2013 MoIC is currently implementing an ICT \r\nManagement Systems to facilitate better planning and monitoring of projects. MOH can study \r\nthe relevance of the IMS to MOH, as adopt the guidelines for their own implementation\r\nv. Close collaboration with MoIC for common interest projects; especially in the areas of network \r\nconnectivity, capability development and ICT governance.\r\nNew strategies that are time tested will work the best. It is critical for the Team to review the strategies \r\noutlined in this Masterplan to ensure it is always aligned with the rapid changes happening within Bhutan \r\nas well as development around the world. Strategies that are deployed need to be tested to ensure it fits \r\nthe requirements and expectations.P a g e | 58 of 63\r\nMinistry of Health\r\nHealthcare ICT Masterplan\r\nANNEX A - MASTERPLAN IMPLEMENTATION ROADMAP\r\nStrategic Thrust 1\r\nEffective Disease Prevention and Control\r\nLead Agency Projected Implementation \r\nCost \r\n(Nu. $ ,000)\r\nH1 FY2014\r\nH2 FY2014\r\nH1 FY2015\r\nH2 FY2015\r\nH1 FY2016\r\nH2 FY2016\r\nH1 FY2017\r\nH2 FY2017\r\nH1 FY2018\r\nH2 FY2018\r\nProgramme 1.1 - Improve system of data collection, analysis and \r\nreporting for health indicators\r\n\uf0a7 Project 1.1.1 \u2013 Implement a more robust Health \r\nManagement Information\r\nMoH 34.23 \r\nProgramme 1.2 - Strengthen health promotion MoH\r\n\uf0a7 Project 1.2.1 - Develop health broadcast notifications and \r\ndisseminate educational information (social media etc)\r\nMoH 10 \r\n\uf0a7 Project 1.2.2 - Develop maternal and child health tracking \r\nsystem\r\nMoH 10P a g e | 59 of 63\r\nMinistry of Health\r\nHealthcare ICT Masterplan\r\nStrategic Thrust 2\r\nImproving Care Accessibility\r\nLead Agency Projected Implementation \r\nCost \r\n(Nu in Million)\r\nH1 FY2014\r\nH2 FY2014\r\nH1 FY2015\r\nH2 FY2015\r\nH1 FY2016\r\nH2 FY2016\r\nH1 FY2017\r\nH2 FY2017\r\nH1 FY2018\r\nH2 FY2018\r\nProgramme 2.1 - Enhance local infrastructure & connectivity\r\n\uf0a7 Project 2.1.1 - Set -up LAN in hospitals MoH 13.5\r\n\uf0a7 Project 2.1.2 - Set-up Bhutan Health Network connectivity \r\nin district hospitals\r\nMoIC/MoH 13.5\r\n\uf0a7 Project 2.1.3 - Last mile Bhutan Health Network \r\nconnectivity from gewog center to all the BHU\u2019s (MOIC)\r\nMoIC/MoH In consultation with MoIC\r\nProgramme 2.2 - Improve Call Centre Service\r\n\uf0a7 Project 2.2.1 - Upgrade and enhance HHC\u2019s Computer \r\nAided Dispatch Systems\r\nMoH 1.5\r\n\uf0a7 Project 2.2.2 - Incorporate Vehicle Tracking System for \r\nambulances\r\nMoH .25 (implementation)\r\n14.1(14.35)\r\nProgramme 2.3 - Improve care accessibility\r\n\uf0a7 Project 2.3.1 - Mobile health application to send \r\nalerts/reminders/appointment date (TB medication 6 months)\r\nMoH\r\n\uf0a7 Project 2.3.2 - Upgrade & extend use of telemedicine MoH 1.55P a g e | 60 of 63\r\nMinistry of Health\r\nHealthcare ICT Masterplan\r\nStrategic Thrust 2\r\nImproving Care Accessibility\r\nproject \r\nStrategic Thrust 3\r\nImproving Patient Services\r\nLead Agency Projected Implementation \r\nCost \r\n(Nu.",
@@ -413,69 +191,17 @@
           "source": "ict-masterplan-final-.pdf",
           "score": 0.2370428900749123
         }
-      ],
-      "opik": {
-        "answer_relevance": {
-          "score": 1.0,
-          "reason": "The answer perfectly addresses the user's explicit question by providing an accurate list of the five strategic thrusts of Bhutan's Healthcare ICT Master Plan. All listed points are directly verifiable and extracted from the provided context material, making the response maximally relevant and comprehensive."
-        },
-        "hallucination": {
-          "score": 0.0,
-          "reason": "[\"The list of five strategic thrusts matches the specific titles used and outlined throughout the provided context (e.g., 'STRATEGIC THRUSTS #1 \u2013 EFFECTIVE DISEASE PREVENTION AND CONTROL', 'STRATEGIC THRUSTS #2 \u2013 IMPROVING CARE ACCESSIBILITY', etc.).\", 'No information in the output contradicts or introduces new concepts beyond what is explicitly stated as section headings within the context.']"
-        },
-        "context_precision": {
-          "score": 0.9,
-          "reason": "The answer is highly accurate and perfectly captures all five strategic thrusts mentioned in both the context and the expected output. The only minor discrepancies are stylistic\u2014specifically, capitalization (e.g., 'Effective Disease Prevention' vs. 'effective disease prevention') and list formatting details. These differences do not affect the core factual content or precision of the information provided. It is extremely close to perfect."
-        },
-        "context_recall": {
-          "score": 1.0,
-          "reason": "The LLM's response perfectly captures all five strategic thrusts listed in the context and matches the expected output in content and accuracy. The sources (such as the Table of Contents section) confirm these exact titles for the five key areas: Effective Disease Prevention and Control, Improving Care Accessibility, Improving Patient Experience, Better Visibility of Medical Equipment and Supplies Usage, and Greater ICT Value to Healthcare Industry. Although the formatting (using numbered lists vs. comma separation) differs slightly from the Expected Output, the factual content recall is flawless, demonstrating complete understanding and accurate extraction from the context."
-        }
-      },
-      "deepeval": {
-        "answer_relevancy": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the answer directly and accurately addresses all parts of the input question regarding Bhutan's Healthcare ICT Master Plan, with no irrelevant statements present.",
-          "success": true
-        },
-        "faithfulness": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because there are no listed contradictions, indicating that the actual output is perfectly faithful to the retrieval context!",
-          "success": true
-        },
-        "contextual_precision": {
-          "score": 0.7,
-          "reason": "The score of 0.70 is accurate because while several highly relevant nodes are present, the contextual precision is lowered by irrelevant nodes being ranked too high. Specifically, the node at Rank 2, which states that 'The text discusses challenges like 'lack of data standards' and 'unique patient identifier' but does not list the five strategic thrusts themselves,' and the node at Rank 3, which focuses on recommendations for improving systems, are irrelevant to the core request. These nodes should be ranked lower than the highly specific lists provided in the nodes at Rank 1, Rank 4, and especially Rank 5, which directly provide the required list structure.",
-          "success": true
-        },
-        "contextual_recall": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because every strategic thrust listed in the Expected Output is fully and explicitly supported by node(s) in retrieval context; specifically, all five points are detailed across multiple sections within node 4.",
-          "success": true
-        },
-        "hallucination": {
-          "score": 0.8,
-          "reason": "The score is 0.80 because the actual output lists five specific strategic thrusts, but the context only provides a general overview and detailed information for one thrust, failing to list or name the full set of five required items.",
-          "success": false
-        }
-      },
-      "mitigation": {
-        "flags": [
-          "deepeval.hallucination=0.80"
-        ],
-        "advice": "Root cause: Retrieval problem\n\n*   [SYSTEM] Re-upload the document using a larger chunk size (e.g., 1024 tokens) and increased overlap (e.g., 30% or 320 tokens). This improves context continuity, ensuring all five discrete strategic thrusts are captured within fewer, more comprehensive chunks.\n*   [SYSTEM] Consider changing the embedding model used by the RAG pipeline if simple chunking changes fail. Test a more advanced/semantic retriever to better group related concepts (like lists of points) together.\n*   [PROMPT] If system changes are infeasible, modify the question phrasing slightly: \"List all five strategic thrusts mentioned in Bhutan's Healthcare ICT Master Plan.\" This improves signal-to-noise ratio for retrieval compared to a purely declarative \"What are...\"."
-      }
+      ]
     },
     {
       "id": "bhutan-masterplan-rationale",
-      "top_k": 5,
       "category": "synthesis",
       "reference_docs": [
         "ict-masterplan-final-.pdf"
       ],
       "question": "Why does Bhutan's Ministry of Health need a healthcare ICT master plan, according to the foreword and executive summary?",
       "expected_output": "The Constitution of the Kingdom of Bhutan mandates free health care for its citizens, and the Ministry of Health must fulfil this mandate while facing a shortage of human resources and rising costs. To continue funding free healthcare, the MOH must curb wastage and deliver care more efficiently while meeting the aspirations of a more informed population. ICT is seen as a key enabler to provide accessible, convenient and cost-effective health care services, and the master plan aligns with the 11th Five Year Plan and the e-Gov plan of the Ministry of Information and Communications.",
-      "answer": "The Ministry of Health needs a healthcare ICT Master Plan because, while it is constitutionally mandated to provide free health care services, it faces challenges including a shortage of human resources and constantly rising costs coupled with inadequate health care professionals. The master plan is necessary because the great potential of ICT can only be realized through a comprehensive and well-planned framework; consequently, it aims to help curb wastages, deliver care more efficiently, and provide accessible, convenient, and cost-effective services to citizens.",
+      "answer": "According to the foreword and executive summary, Bhutan's Ministry of Health needs the healthcare ICT master plan to:\n\n*   **Fulfill its constitutional mandate** to provide free, quality, and sustainable healthcare services to its citizens.\n*   **Address key challenges**, such as a shortage of healthcare human resources and the constantly rising cost of resources.\n*   **Curb wastages and deliver care more efficiently** to continue funding free healthcare.\n*   **Fulfill the aspirations** of a more informed population.\n*   **Realize the potential of ICT** by consolidating efforts and resources, integrating systems and applications, and creating a conducive environment for ICT adoption. \n*   **Bring healthcare closer to citizens**, aiming to provide accessible, convenient, and cost-effective services directly to their doorsteps.",
       "contexts": [
         {
           "text": "Healthcare ICT Master plan\r\nMinistry of Health\r\nKingdom of BhutanP a g e | 2 of 63\r\nMinistry of Health\r\nHealthcare ICT Masterplan\r\nTABLE OF CONTENTS\r\n1 FOREWORD 4\r\n2 EXECUTIVE SUMMARY 5\r\n3 ACKNOWLEDGEMENTS 6\r\nMOH CORE TEAM 6\r\nROUNDTABLE MEETING PARTICIPANTS 7\r\n4 APPROACH 9\r\n4.1 OVERVIEW 9\r\n4.2 MASTERPLANNING METHODOLOGY 9\r\n4.2.1 Stage 1 \u2013 Planning 9\r\n4.2.2 Stage 2 \u2013 Discovery 9\r\n4.2.3 Stage 3 \u2013 Design 10\r\n4.2.4 Stage 4 \u2013 Implementation 10\r\n4.2.5 Stage 5 \u2013 Consult and Roundtable 10\r\n5 TAKING STOCK 11\r\n5.1 BHUTAN\u2019S MOH ICT ACHIEVEMENTS TO-DATE 11\r\n5.2 KEY FINDINGS 11\r\n5.3 ADDRESSING THE GAPS 133\r\n6 HEALTH ICT MASTERPLAN 155\r\n6.1 HEALTH ICT VISION 155\r\n6.2 DESIRED OUTCOMES 155\r\n6.3 STRATEGIC THRUSTS OVERVIEW 155\r\n6.4 STRATEGIC FRAMEWORK AT A GLANCE ERROR! BOOKMARK NOT DEFINED.\r\n6.5 STRATEGIC THRUSTS #1 \u2013 EFFECTIVE DISEASE PREVENTION AND CONTROL 177\r\n6.5.1 Program 1.1 \u2013 Improve system of data collection, analysis and reporting for health indicators 177\r\n6.5.2 Program 1.2 \u2013 Strengthen Health Promotion 20\r\n6.6 STRATEGIC THRUSTS #2 \u2013 IMPROVING CARE ACCESSIBILITY 23\r\n6.6.1 Program 2.1 \u2013 Enhance local infrastructure & connectivity 23\r\n6.6.2 Program 2.2 \u2013 Improve Call Centre Service 26\r\n6.6.3 Program 2.3 \u2013 Improve care accessibility 299\r\n6.7 STRATEGIC THRUSTS #3 \u2013 IMPROVING PATIENT EXPERIENCE 333\r\n6.7.1 Program 3.1 \u2013 Improving Patient Experience 333\r\n6.8 STRATEGIC THRUSTS #4 \u2013 BETTER VISIBILITY OF MEDICAL EQUIPMENT AND SUPPLIES USAGE 41\r\n6.8.1 Program 4.1 \u2013 Better stock/ equipment management to optimize distribution and reduce wastage 41\r\n6.9 STRATEGIC THRUSTS #5 \u2013 GREATER ICT VALUE TO HEALTHCARE INDUSTRY 455\r\n6.9.1 Program 5.1 \u2013 Build a MOH-centric ICT organisation (MOIC) 455\r\n6.9.2 Program 5.2 \u2013 Develop healthcare ICT capability 51\r\n7 IMPLEMENTATION ROADMAP 577\r\n8 NEXT STEPS 57\r\n8.1 WHAT\u2019S NEXT 5757\r\n8.2 CRITICAL SUCCESS FACTOR 57P a g e | 3 of 63\r\nMinistry of Health\r\nHealthcare ICT Masterplan\r\nANNEX A - MASTERPLAN IMPLEMENTATION ROADMAP 58\r\nANNEX B KEY PERFORMANCE INDEX KPI 63P a g e | 4 of 63\r\nMinistry of Health\r\nHealthcare ICT Masterplan\r\n1 FOREWORD\r\nInformation Communication Technology (ICT) has shaped the way individuals, societies, and the world \r\ncommunicate/interact. ICT has transformed the way government delivers its services to its citizens. The \r\npotential of ICT is limitless and is constrained only by limits of human imagination. \r\nRoyal Government of Bhutan has prioritized ICT as the principal enabler for a knowledge-based society. \r\nThe government of Bhutan is mandated by the Constitution of the Kingdom of Bhutan to provide free \r\nhealth care services to its citizen. The Ministry of Health has this constitutional mandate to be fulfilled. \r\nOn the other hand, the Ministry of Health is faced with shortage of Human Resources in all areas of health \r\ncare services. Constantly rising cost of resources coupled with inadequate health care professionals \r\ncontinues to pose a stumbling block to provide quality health care services to our citizens.\r\nICT has a great potential to impact upon almost every aspect of the health sector. In public health, \r\ninformation management and communication processes are pivotal, and are facilitated or limited by the \r\navailable information and communication technology. In addition, beyond the formal health sector, the \r\nability of communities to access services and engage with and demand a health sector that responds to \r\ntheir priorities and needs, is importantly influenced by wider information and communication processes, \r\nmediated by ICT.",
@@ -502,63 +228,10 @@
           "source": "ict-masterplan-final-.pdf",
           "score": 0.2437726428748942
         }
-      ],
-      "opik": {
-        "answer_relevance": {
-          "score": 1.0,
-          "reason": "The answer is perfectly relevant. It directly and accurately synthesizes the key points regarding the necessity of the ICT Master Plan\u2014including the constitutional mandate, existing challenges (resource shortages, rising costs), and the desired outcomes/benefits (curbing wastage, efficiency, accessibility)\u2014all sourced explicitly from the Foreword and Executive Summary sections provided in the context."
-        },
-        "hallucination": {
-          "score": 0.0,
-          "reason": "['The OUTPUT correctly identifies that the Ministry of Health is constitutionally mandated to provide free health care services, which is stated in the Foreword section.', 'It accurately lists the core challenges\u2014shortage of human resources and constantly rising costs coupled with inadequate health care professionals\u2014as detailed in the Foreword.', \"The necessity of a comprehensive ICT Master Plan is explained correctly by stating that 'the great potential of ICT can only be realized through a comprehensive and well-planned framework,' directly referencing the context's message regarding realizing ICT's potential.\", 'The stated objectives\u2014curbing wastages, delivering care efficiently, and providing accessible, convenient, and cost-effective services\u2014are all pulled from the Executive Summary section of the CONTEXT.']"
-        },
-        "context_precision": {
-          "score": 0.8,
-          "reason": "The LLM's answer is highly accurate and captures all the main points required: the constitutional mandate for free health care, the operational challenges (HR shortage, rising costs), and the role of ICT in achieving efficiency, curbing wastage, and ensuring accessibility. It draws directly from the material provided in the context.\nHowever, it misses one specific detail present in the Expected Output: the explicit alignment of the master plan with the '11th Five Year Plan and the e-Gov plan of the Ministry of Information and Communications.' This omission is minor but prevents a perfect 1.0 score."
-        },
-        "context_recall": {
-          "score": 0.85,
-          "reason": "The response is highly accurate and comprehensive, successfully synthesizing the core arguments from the context's foreword and executive summary. It correctly identifies the primary motivations for the Master Plan: fulfilling Bhutan's constitutional mandate for free healthcare, and addressing acute resource challenges (shortage of human resources and rising costs). The explanation regarding ICT's potential to curb wastage and improve efficiency is spot-on.\n\nHowever, it misses two specific, structural contextual details that were included in the Expected Output: the explicit alignment with the '11th Five Year Plan' and the linkage to the 'e-Gov plan of the Ministry of Information and Communications.' The inclusion of these precise linkages would elevate the score to 1.0, but their omission prevents a perfect recall."
-        }
-      },
-      "deepeval": {
-        "answer_relevancy": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the answer directly and completely addresses the prompt using only relevant information, and there were no irrelevant statements found.",
-          "success": true
-        },
-        "faithfulness": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because there are no listed contradictions, indicating that the actual output is perfectly faithful to the retrieval context!",
-          "success": true
-        },
-        "contextual_precision": {
-          "score": 0.5889,
-          "reason": "The score is 0.59 because while the retrieval context contains highly relevant information in nodes at Rank 2, Rank 3, and Rank 5 (which detail mandates, constitutional requirements, and systemic failures), the presence of an irrelevant node at Rank 1 ('This document is primarily a table of contents...') prevents a higher score. However, the score is acceptable because the most critical supporting evidence for the Master Plan's necessity is captured by nodes in ranks 2, 3, and 5, which are placed relatively high up in the ranking.",
-          "success": true
-        },
-        "contextual_recall": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because every key aspect of the Expected Output, including the constitutional mandate for free healthcare, operational challenges, efficiency goals, and ICT planning alignment, is comprehensively supported by multiple parts of node(s) in retrieval context (specifically node 2).",
-          "success": true
-        },
-        "hallucination": {
-          "score": 0.6,
-          "reason": "The score is 0.60 because while the output correctly captured general mandates and goals (e.g., curbing wastage), it hallucinated by introducing narrative reasons for the plan's necessity (like HR shortage) and, more critically, failed to include specific structural and technical gaps detailed in the context, such as the lack of unique patient identifiers or proper LAN setup.",
-          "success": false
-        }
-      },
-      "mitigation": {
-        "flags": [
-          "deepeval.contextual_precision=0.59",
-          "deepeval.hallucination=0.60"
-        ],
-        "advice": "Root cause: Retrieval/Generation interaction issue. The retrieval provides sufficient context, but the combination of a contaminated context set and weak generation instructions allows the LLM to hallucinate high-level narrative reasons while omitting crucial technical details provided in the source chunks.\n\n* [SYSTEM] Increase `top_k` to 8. This gives the model more supporting evidence (beyond just the top 5) to pull specific, detailed facts (like unique identifiers) that are currently being overlooked.\n* [SYSTEM] Modify the grounding prompt: Append \"If multiple disparate points are made in the context, you must synthesize them into a comprehensive answer that includes all mentioned mandatory gaps or technical shortcomings.\" This forces detail inclusion.\n* [PROMPT] If possible for this test case, manually fix `expected_output` to explicitly include the necessary detailed components (e.g., \"The plan must address structural gaps like lacking unique patient IDs and proper LAN setup.\")."
-      }
+      ]
     },
     {
       "id": "cross-doc-digital-health",
-      "top_k": 5,
       "category": "cross-document",
       "reference_docs": [
         "ICT_India_Working_Paper_60.pdf",
@@ -566,7 +239,7 @@
       ],
       "question": "Compare how India and Bhutan are approaching digital health according to these documents: what kind of initiatives does each country pursue?",
       "expected_output": "India's approach (per the working paper) is centred on targeted digital mental health initiatives: national and state platforms such as MANAS and e-Manas Karnataka, plus pilot projects like Project ESSENCE, aimed at closing the mental healthcare gap. Bhutan's approach (per the master plan) is a comprehensive, whole-of-system Healthcare ICT Master Plan by the Ministry of Health, organised around five strategic thrusts covering disease prevention, care accessibility, patient experience, medical equipment visibility, and ICT capability building, aligned with national five-year planning.",
-      "answer": "Bhutan's approach involves establishing extensive national infrastructure and multiple forms of tele-consultation services. Initiatives include:\n*   Establishing the Health Help Centre (HHC) as a National level call centre for emergency health response, medical advice, counseling, and complaint logging.\n*   Implementing future telemedicine plans involving customized email-based solutions for capturing patient details, diagnostic results, and images; chat software consultation (LIVEzilla); utilizing existing web systems (Bhutan Rural Telemedicine System); and calling the HHC center for specialist services over phone.\n*   Working on standardizing health data, implementing unique patient identifiers, and developing Hospital Information Systems (HIS) at facilities like Jigme Dorji Wangchuck National Referral Hospital (JDWNRH).\n\nIndia's involvement mentioned in the context is through facilitating a Continuing Medical Education (CME) service via the SAARC telemedicine project established in JDWNRH. This setup utilizes expertise from two super-speciality hospitals in India: SGPGIMS, Lucknow and PGIMER, Chandigarh.",
+      "answer": "The provided documents do not contain this information.",
       "contexts": [
         {
           "text": "The RTP and SAARC have been in operation during 2009-2011 and these were reviewed in September 2011 \r\nby WHO/SEARO and the findings of the review guided this strategy. In parallel to these initiatives \r\ncategorized as telemedicine projects, there have been other projects that would link closely with the \r\ntelemedicine initiative. For example: In 2010, the Health Help Centre (HHC) has been established in Bhutan \r\n(Thimphu) that serves as a National level call centre to provides Government to Citizen Services for (i) \r\nEmergencies health response and (ii) Healthcare Helpline that includes medical advice, medical counseling, \r\nhealth facility information provision, complaint logging. For birth delivery, any citizen can call a number \r\nand there will be a response team visiting the home for help with birth delivery.\r\nOver the last decade, the connectivity has drastically improved in Bhutan and it is expected to further \r\nimprove by middle 2012 with the new project launched by DANIDA to improve bandwidth in the country. \r\nCurrent situation\r\nThough large amount of resources and efforts has been mobilized for implementation of telemedicine in \r\nBhutan, it was however not as expected. As of today, the telemedicine project is non functional and efforts \r\nare under way to revive the project.\r\nCurrent challenges\r\ni. Numerous challenges have been encountered which resulted in the non functional of \r\ntelemedicine project. Some of the important challenges are;\r\nii. Low acceptance/adoption of telemedicine systems/project by health care professionals, \r\nparticularly the specialist providing the consultation. \r\niii. Long-term government commitment, based on a strategic plan, is necessary for the successful \r\nimplementation of telemedicine programme. This commitment should be secured and P a g e | 32 of 63\r\nMinistry of Health\r\nHealthcare ICT Masterplan\r\nsustained by creating a Telemedicine department headed by the Head of the department. A \r\nlong-term implementation plan should be developed with sustainable financing \r\niv. Unlike developed countries, adequate ICT resources both in terms of human resources and \r\ninfrastructure is a huge challenge\r\nv. Lack of health care professionals with adequate ICT knowledge and skills. In other words there \r\nis a lack of health care informatics. \r\nFuture plan\r\nWith assistance from WHO, a proposal to review the telemedicine programme in Bhutan, a plan has been \r\nproposed to develop e-mail based telemedicine linked with HIS. The future plan are;\r\nI. Remote Medical Professional will use a customized email based telemedicine solution that is \r\ndesigned with suitable templates in the email system to capture patient details, complaints, \r\ndiagnostic results such as laboratory test results and X-Ray images and even dermatology pictures \r\nfor cases of patient suffering from skin diseases. This tele-consultation is received at the expert end \r\nas an email in their inbox. The doctors/ specialist can then send back reply through the same email \r\nsystem that will have a template for them to fill in which maybe a diagnosis or prescription or an \r\ninstruction for further tests.\r\nII. In case the doctors/ specialists are online, the Remote Medical professional can consult cases \r\nand share patient details, tests through chat software (LIVEzilla). Such consultations also need to \r\nbe recorded in the database.\r\nIII. The existing web-based system (Bhutan Rural Telemedicine System) can also be used to tele\ufffdconsult cases from places where it has been installed and such records have to feed into the \r\nconsultation database.\r\nIV. Remote Medical professional can also call to the HHC centre for instant access to the Specialist \r\ndoctors and can get the service over phone though HHC call conference facility.\r\nMeanwhile the consultations whether vide web, email, chat or phone are automatically logged in the \r\ndatabase with details of who had tele-consulted the case, to whom, about what and the status of \r\nresponse from the expert end.\r\nThe Telemedicine focal point located at HQ or HHC can monitor the status of tele-consultations done \r\nthrough web, email, chat or phone through the web portal (data fed from database) that can also \r\ngenerate daily reports.P a g e | 33 of 63\r\nMinistry of Health\r\nHealthcare ICT Masterplan\r\n6.7 Strategic Thrusts #3 \u2013 Improving Patient Experience at Care Facilities\r\n6.7.1 Program 3.1 \u2013 Improving Patient Experience at Care Facilities\r\nThis program comprises of projects aimed at improving overall patient satisfaction at MOH\u2019s care facilities \r\nthrough data sharing across its facilities, introduction of initiatives such as queue management and \r\nappointment systems to ensure that patients need not go through unnecessary tests and long waiting time.",
@@ -593,65 +266,10 @@
           "source": "ict-masterplan-final-.pdf",
           "score": 0.3261401172755546
         }
-      ],
-      "opik": {
-        "answer_relevance": {
-          "score": 1.0,
-          "reason": "The answer is extremely relevant and comprehensive. It perfectly addresses the user's request to compare the digital health initiatives of both Bhutan and India. It synthesizes highly specific details regarding Bhutan's infrastructure (HHC, telemedicine plans, HIS development) and accurately extracts India's role (SAARC project, SME expertise in Lucknow and Chandigarh) directly from the provided context, making it a flawless and detailed response."
-        },
-        "hallucination": {
-          "score": 0.0,
-          "reason": "[\"The description of Bhutan's initiatives is entirely supported by the context.\", 'The role of the Health Help Centre (HHC) and its services are accurately transcribed from the text.', \"The multiple future telemedicine plans (email solution, LIVEzilla chat, using existing web systems, and calling HHC for specialists) are accurately summarized based on the detailed 'Future plan' section in the context.\", 'The efforts to standardize health data, implement unique identifiers, and develop HIS at Jigme Dorji Wangchuck National Referral Hospital (JDWNRH) are faithful summaries of the sections discussing standardization and HIS implementation in Bhutan.', \"India's involvement is accurately described as facilitating CME services through the SAARC telemedicine project utilizing expertise from SGPGIMS, Lucknow, and PGIMER, Chandigarh, matching the details provided in the context.\"]"
-        },
-        "context_precision": {
-          "score": 0.4,
-          "reason": "The generated output is highly accurate and thoroughly supported by the provided 'Context' document. It excels at synthesizing detailed, operational initiatives for both Bhutan (HHC, HIS, future telemedicine plans) and India (SAARC/JDWNRH CME). However, when comparing it to the 'Expected Output', there are major discrepancies in scope and focus that prevent a higher score. The Expected Output requires specific external knowledge regarding Indian digital mental health platforms (MANAS, e-Manas Karnataka) and summarizing Bhutan's approach around five high-level strategic thrusts. The LLM output instead focuses on specific infrastructure details mentioned only in the source text for both countries. Therefore, while the answer is factually correct *to the context*, it fails to match the scope and key subject matter points required by the Expected Output."
-        },
-        "context_recall": {
-          "score": 0.6,
-          "reason": "The LLM's response is accurate in summarizing the operational details available for both countries within the provided context. For Bhutan, it correctly identifies the establishment of HHC and various telemedicine plans (email-based solutions, chat software), which are all mentioned in the documents.\n\nFor India, it correctly mentions the SAARC telemedicine project utilizing super-speciality hospitals (SGPGIMS, PGIMER).\n\nHowever, the score is limited because the response fails to match the strategic depth and high-level programmatic focus of the Expected Output. The expected answer demands specific strategic frameworks (e.g., Bhutan's 5 Strategic Thrusts; India's MANAS/Project ESSENCE for mental health) which are entirely absent from the provided context documents. The LLM summarizes *what is written* in the text, but this summary does not align with the necessary 'whole-of-system' strategic comparison outlined in the ideal answer."
-        }
-      },
-      "deepeval": {
-        "answer_relevancy": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the answer provides a direct and comprehensive comparison of digital health approaches, initiatives, and strategies for both India and Bhutan, fully addressing all aspects of the input query without any irrelevant information.",
-          "success": true
-        },
-        "faithfulness": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because there are no listed contradictions, indicating that the actual output is perfectly faithful to the retrieval context!",
-          "success": true
-        },
-        "contextual_precision": {
-          "score": 0.0,
-          "reason": "The score is 0.00 because all nodes in retrieval contexts are marked as irrelevant, and this ranking is accurate. Although the nodes provide detailed information about Bhutan's digital health initiatives (e.g., 'Health Help Centre (HHC)' in Node 1), every single node explicitly states that it lacks comparative data points regarding India's specific platforms like MANAS or e-Manas Karnataka. Since no relevant nodes were found, even though the ranking correctly identifies all provided contexts as insufficient for a complete comparison, the score cannot be higher than 0.00.",
-          "success": false
-        },
-        "contextual_recall": {
-          "score": 0.0,
-          "reason": "The score is 0.00 because the expected output details specific national initiatives for India (e.g., MANAS, Project ESSENCE) that are not mentioned in any node(s) in retrieval context. Furthermore, while the context touches upon general concepts like 'Strategic Thrusts' or improving patient experience (Node 2/4), it fails to provide a comprehensive summary or list all five specific strategic thrusts required for Bhutan's approach.",
-          "success": false
-        },
-        "hallucination": {
-          "score": null,
-          "reason": null,
-          "error": "RetryError[<Future at 0x11b782f00 state=finished raised TimeoutError>]"
-        }
-      },
-      "mitigation": {
-        "flags": [
-          "opik.context_precision=0.40",
-          "opik.context_recall=0.60",
-          "deepeval.contextual_precision=0.00",
-          "deepeval.contextual_recall=0.00"
-        ],
-        "advice": "Root cause: Retrieval problem (The corpus is incomplete/the default chunking failed to retrieve source documents containing data for both countries).\n\n*   [SYSTEM] Increase system context window and possibly `top_k=7`. This increases the chance of retrieving a more comprehensive set of chunks spanning multiple sources that might mention comparative or international elements.\n*   [SYSTEM] Review corpus indexing: Re-upload documents using increased chunk overlap (e.g., 20%) to ensure topical links or high-level comparative statements are captured across document boundaries.\n*   [PROMPT] Refine the grounding prompt for comparison: Modify the system prompt to explicitly mandate, \"If comparing two entities X and Y, structure the answer with distinct headings for each (X's approach vs. Y's approach).\""
-      }
+      ]
     },
     {
       "id": "out-of-scope-blockchain",
-      "top_k": 5,
       "category": "out-of-scope",
       "reference_docs": [],
       "question": "What does Bhutan's Healthcare ICT Master Plan say about using blockchain for patient health records?",
@@ -683,63 +301,10 @@
           "source": "ict-masterplan-final-.pdf",
           "score": 0.30947939250888234
         }
-      ],
-      "opik": {
-        "answer_relevance": {
-          "score": 1.0,
-          "reason": "The user asks a specific question about 'blockchain' within the context of Bhutan's ICT Master Plan. A careful review of all provided context snippets reveals no mention or discussion of blockchain technology. The answer correctly and accurately reports this information gap by stating that the required data is not present in the documents, making it perfectly relevant to the source material limitations."
-        },
-        "hallucination": {
-          "score": 0.0,
-          "reason": "['The output is a declaration that the information was not found within the provided documents.', 'This statement does not introduce new facts, contradict any established context details, or hallucinate information; it merely reports the absence of a specific topic (implied to be blockchain) within the scope of the CONTEXT.']"
-        },
-        "context_precision": {
-          "score": 1.0,
-          "reason": "The user is asking a highly specific question about 'blockchain' technology within the context of Bhutan\u2019s Healthcare ICT Master Plan. A thorough review of all provided documents confirms that the term 'blockchain' and any discussion related to its use for patient health records are entirely absent. The LLM correctly identifies this informational gap by stating, 'The provided documents do not contain this information.' This response is perfectly accurate, directly aligning with the expected logic and achieving full adherence to the context boundaries."
-        },
-        "context_recall": {
-          "score": 1.0,
-          "reason": "The LLM's response is perfect. The user asked a specific question about 'blockchain,' and upon reviewing the provided context (the Healthcare ICT Masterplan), there is no mention of blockchain technology. The expected answer explicitly guides the model to state that the information is absent rather than guessing or hallucinating. The LLM response, 'The provided documents do not contain this information,' perfectly adheres to both the contextual reality (no mention of blockchain) and the instructional requirement set by the expected output. It demonstrates complete recall and accurate grounding."
-        }
-      },
-      "deepeval": {
-        "answer_relevancy": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the answer directly and completely addresses the specific query regarding Bhutan's Healthcare ICT Master Plan and blockchain use for patient records. There are no irrelevant statements to detract from its high relevance.",
-          "success": true
-        },
-        "faithfulness": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because there are no listed contradictions, indicating that the actual output is perfectly faithful to the retrieval context!",
-          "success": true
-        },
-        "contextual_precision": {
-          "score": 0.8875,
-          "reason": "The score of 0.89 reflects strong contextual relevance, as most top-ranked nodes provide highly pertinent information regarding data standardization challenges ('there is no common identifier to link the same patients which already have records in two separate systems') (Rank 1) and the lack of unique identifiers ('there does not exist a unique patient identifier across different application system. HIS is using a different number and LIS is using its own identifier') (Rank 2). However, the score is not higher because an irrelevant node appears at Rank 3, stating that 'TABLE OF CONTENTS' contains no substantive discussion regarding blockchain technology or its application to patient records. This placement of an irrelevant node before highly relevant nodes diminishes the overall contextual precision.",
-          "success": true
-        },
-        "contextual_recall": {
-          "score": 0.0,
-          "reason": "The score is 0.00 because neither the statement that 'blockchain' is absent from the documents nor the instructional guidance on how to answer questions based on missing information can be attributed to any node(s) in retrieval context.",
-          "success": false
-        },
-        "hallucination": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the actual output contradicts multiple highly specific and detailed factual points provided in the context, failing to incorporate details regarding technical systems, data standards, document structure, or policy mandates.",
-          "success": false
-        }
-      },
-      "mitigation": {
-        "flags": [
-          "deepeval.contextual_recall=0.00",
-          "deepeval.hallucination=1.00"
-        ],
-        "advice": "Root cause: Metric artifact (DeepEval's `hallucination` score penalizes a correct abstention because the refusal statement itself is not \"derived\" from specific context nodes.)\n\n*   [SYSTEM] Increase top_k to 8 and implement an explicit instruction in the grounding prompt: \"If the answer is completely absent, state 'Information not covered by the documents.' Treat this mandated abstinence sentence as a correct conclusion.\"\n*   [SYSTEM] Consider adding a system filter or pre-processing step for Out-of-Scope questions that forces the model to explicitly check context chunks for negative mentions (\"not discussed,\" \"absent\") before generating.\n*   [PROMPT] For future out-of-scope tests, update the `expected_output` to be more robustly structured (e.g., requiring a JSON format) instead of relying on free text to minimize judge variance."
-      }
+      ]
     },
     {
       "id": "out-of-scope-budget",
-      "top_k": 5,
       "category": "out-of-scope",
       "reference_docs": [],
       "question": "What was the total budget in US dollars allocated to the MANAS platform?",
@@ -771,60 +336,7 @@
           "source": "ICT_India_Working_Paper_60.pdf",
           "score": 0.4459753379305128
         }
-      ],
-      "opik": {
-        "answer_relevance": {
-          "score": 1.0,
-          "reason": "The user is asking for a specific piece of quantitative data: the total budget in US dollars allocated to the MANAS platform. The context provides details about the launch date, developers, and purpose of MANAS but does not contain any financial figures, budgets, or dollar amounts. Therefore, the answer correctly informs the user that the required information is unavailable in the provided documents, making it perfectly relevant and accurate."
-        },
-        "hallucination": {
-          "score": 0.0,
-          "reason": "['The OUTPUT accurately assesses the CONTEXT by stating that the requested information (the total budget in US dollars allocated to MANAS) is not present in any of the provided documents.', 'The CONTEXT discusses the launch details, purpose, and developing bodies of MANAS, but never mentions specific financial budgets or dollar amounts.']"
-        },
-        "context_precision": {
-          "score": 0.8,
-          "reason": "The LLM's answer is highly accurate and perfectly captures the core finding required by the Expected Output: that the requested budget information for MANAS is not present in the provided documents. It correctly declines to hallucinate data. However, it is not a perfect match (1.0) because it does not use the specific phrasing or provide the detailed instructional context ('The working paper does not state...') as precisely as the Expected Output dictates. Therefore, it is considered highly accurate with minor discrepancies."
-        },
-        "context_recall": {
-          "score": 0.9,
-          "reason": "The LLM response accurately determines that the requested information (the total budget in US dollars allocated to MANAS) is not present within the provided context documents. This fulfills the primary objective of answering factually based *only* on the supplied material and correctly refusing to hallucinate a number. The expected output provides detailed instruction ('A correct answer must state that...') alongside the factual answer, but the LLM successfully captured the core, critical truth: the data is missing. Therefore, it demonstrates an extremely high level of context recall and accuracy, only losing minor points for not mirroring the specific explanatory framing provided in the 'Expected Output'."
-        }
-      },
-      "deepeval": {
-        "answer_relevancy": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the answer directly and completely addresses the input query regarding the total budget allocated to the MANAS platform without any irrelevant information.",
-          "success": true
-        },
-        "faithfulness": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because there are no listed contradictions, indicating that the actual output is perfectly faithful to the retrieval context!",
-          "success": true
-        },
-        "contextual_precision": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because every single node retrieved in the context was highly relevant to the query, achieving perfect contextual precision! Since all nodes are relevant, there were no irrelevant nodes that could potentially be ranked higher than the useful information provided.",
-          "success": true
-        },
-        "contextual_recall": {
-          "score": 0.0,
-          "reason": "The score is 0.00 because both sentences in the expected output\u2014the assessment of missing information regarding MANAS's budget figure, and the subsequent instructional advice on how to answer\u2014are external commentary or assessments that cannot be attributed to any node(s) in retrieval context.",
-          "success": false
-        },
-        "hallucination": {
-          "score": 1.0,
-          "reason": "The score is 1.00 because the actual output contradicts multiple specific and detailed facts provided in the context, including program dates, statistics on mental health burden, impact of COVID-19, and academic citations.",
-          "success": false
-        }
-      },
-      "mitigation": {
-        "flags": [
-          "deepeval.contextual_recall=0.00",
-          "deepeval.hallucination=1.00"
-        ],
-        "advice": "Root cause: metric artifact\n\n*   [SYSTEM] Update the grounding prompt to explicitly define \"successful abstention\" as a valid, low-hallucination state. Add an instruction like: \"If the required information is absent, answer ONLY with 'The context does not contain this specific information.' Do not invent details and do not elaborate on why the information is missing.\"\n*   [PROMPT] Simplify the `expected_output` for this test case to purely factual output (e.g., \"The working paper does not state a budget figure for MANAS.\"), removing instructional advice, which confuses both the model and the judge metrics.\n*   [SYSTEM] Monitor the behavior of the DeepEval Hallucination metric specifically when the model outputs an abstention statement. If repeat failures occur, flag the metric as unreliable for out-of-scope questions."
-      }
+      ]
     }
-  ],
-  "recommendations": "*   [SYSTEM] **Update Grounding Prompt (Synthesis & Abstinence):** Modify the shared prompt to mandate citation *and* explicitly define failure modes: \"When synthesizing facts, cite source IDs. If information is completely absent, state 'Information not covered by the documents.' Never infer names or dates.\"\n*   [SYSTEM] **Default Retrieval Parameters:** Re-upload all critical documentation with a larger chunk overlap (e.g., 20%) and set `top_k=7` to ensure comprehensive retrieval of details spanning multiple sources, addressing cross-document gaps.\n*   [SYSTEM] **Temperature Setting:** Set the default generation temperature to a minimal value (e.g., `temp=0.1`) for stable factual recall, while allowing minor increases only when synthesis variation is required.\n*   [PROMPT] For Out-of-Scope test cases: Implement an explicit check in the retrieval/generation pipeline that forces the model to confirm context failure before generating its refusal statement."
+  ]
 }

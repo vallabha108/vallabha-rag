@@ -15,3 +15,6 @@ wheels/
 # DeepEval local cache
 .deepeval/
 .deepeval_telemetry.txt
+
+# Open WebUI local secret (must never be committed)
+.webui_secret_key

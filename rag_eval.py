@@ -306,6 +306,9 @@ def _make_judges(backend: str, model: str, project: str):
     """Return (deepeval_judge, opik_model) for the chosen backend."""
     os.environ.setdefault("DEEPEVAL_TELEMETRY_OPT_OUT", "YES")
     os.environ.setdefault("OPIK_USAGE_REPORT_ENABLED", "false")
+    # No Comet account is configured; disable trace logging so litellm-backed
+    # judges don't spam 401s trying to upload spans.
+    os.environ.setdefault("OPIK_TRACK_DISABLE", "true")
 
     if backend == "vertex":
         # Route Opik's LiteLLM judge and DeepEval's Gemini judge through Vertex AI + ADC.
