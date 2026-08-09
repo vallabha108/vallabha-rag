@@ -8,6 +8,7 @@ dependencies = [
     "deepeval>=4.1.5",
     "google-cloud-aiplatform>=1.163.0",
     "google-genai>=2.17.0",
+    "ollama>=0.6.2",
     "opik>=2.2.23",
 ]
 

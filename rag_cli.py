@@ -172,19 +172,22 @@ def cmd_delete_corpus(args: argparse.Namespace) -> None:
 def cmd_test_run(args: argparse.Namespace) -> None:
     import rag_eval
 
-    rag_eval.run_prompts(args.project, args.location, args.corpus, top_k=args.top_k)
+    rag_eval.run_prompts(
+        args.project, args.location, args.corpus,
+        top_k=args.top_k, backend=args.backend, model=args.model,
+    )
 
 
 def cmd_test_eval(args: argparse.Namespace) -> None:
     import rag_eval
 
-    rag_eval.evaluate(args.project)
+    rag_eval.evaluate(args.project, backend=args.backend, model=args.model)
 
 
 def cmd_test_recommend(args: argparse.Namespace) -> None:
     import rag_eval
 
-    rag_eval.recommend(args.project)
+    rag_eval.recommend(args.project, backend=args.backend, model=args.model)
 
 
 def cmd_test_report(args: argparse.Namespace) -> None:
@@ -238,23 +241,39 @@ def main() -> None:
     p_del_corpus.add_argument("--yes", action="store_true", help="Confirm deletion")
     p_del_corpus.set_defaults(func=cmd_delete_corpus)
 
+    def add_model_args(p: argparse.ArgumentParser) -> None:
+        p.add_argument(
+            "--backend", choices=["vertex", "ollama"], default=os.environ.get("VALLABHA_RAG_EVAL_BACKEND", "vertex"),
+            help="Model backend: 'vertex' = cloud Gemini on Vertex AI, 'ollama' = local Ollama (default: vertex)",
+        )
+        p.add_argument(
+            "--model", default=None,
+            help="Model name (default: gemini-3.5-flash for vertex, gemma4 for ollama)",
+        )
+
     p_test_run = sub.add_parser("test-run", help="Answer every prompt in test/prompt.json via RAG")
     p_test_run.add_argument("--top-k", type=int, default=5, help="Chunks to retrieve per prompt (default: 5)")
+    add_model_args(p_test_run)
     p_test_run.set_defaults(func=cmd_test_run)
 
-    sub.add_parser("test-eval", help="Score results with Opik + DeepEval LLM-as-judge metrics").set_defaults(func=cmd_test_eval)
+    p_test_eval = sub.add_parser("test-eval", help="Score results with Opik + DeepEval LLM-as-judge metrics")
+    add_model_args(p_test_eval)
+    p_test_eval.set_defaults(func=cmd_test_eval)
 
-    sub.add_parser(
+    p_test_rec = sub.add_parser(
         "test-recommend", help="Diagnose low-scoring cases and add concrete tuning mitigations to metrics.json"
-    ).set_defaults(func=cmd_test_recommend)
+    )
+    add_model_args(p_test_rec)
+    p_test_rec.set_defaults(func=cmd_test_recommend)
 
     p_test_report = sub.add_parser("test-report", help="Generate the HTML metrics report (test/report.html)")
     p_test_report.add_argument("--open", action="store_true", help="Open the report in a browser")
     p_test_report.set_defaults(func=cmd_test_report)
 
-    p_test_all = sub.add_parser("test-all", help="test-run + test-eval + test-report in one go")
+    p_test_all = sub.add_parser("test-all", help="test-run + test-eval + test-recommend + test-report in one go")
     p_test_all.add_argument("--top-k", type=int, default=5, help="Chunks to retrieve per prompt (default: 5)")
     p_test_all.add_argument("--open", action="store_true", help="Open the report in a browser")
+    add_model_args(p_test_all)
     p_test_all.set_defaults(func=cmd_test_all)
 
     args = parser.parse_args()

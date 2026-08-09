@@ -28,11 +28,13 @@ C4Context
 
     System_Ext(vertex, "Vertex AI RAG Engine", "Google Cloud managed RAG service in europe-west4: parses, chunks, embeds, and indexes documents")
     System_Ext(gemini, "Gemini on Vertex AI", "gemini-3.5-flash (global endpoint): grounded answer generation, LLM-as-judge scoring, and tuning-mitigation generation")
+    System_Ext(ollama, "Ollama (local)", "Optional --backend ollama: a local model (default gemma4) replaces cloud Gemini for generation, judging, and mitigations")
     System_Ext(gcloud, "Google Auth (ADC)", "Application Default Credentials issued via `gcloud auth application-default login`")
 
     Rel(user, ragcli, "Runs commands", "terminal")
     Rel(ragcli, vertex, "Creates corpus, uploads files, retrieves contexts", "gRPC / HTTPS")
     Rel(ragcli, gemini, "Generates answers, judges metrics, drafts mitigations", "HTTPS")
+    Rel(ragcli, ollama, "Same roles when --backend ollama", "HTTP localhost:11434")
     Rel(ragcli, gcloud, "Obtains OAuth2 access tokens", "local credential file")
 
     UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
@@ -55,6 +57,7 @@ C4Container
         ContainerDb(docs, "docs/ folder", "PDF, DOCX, TXT, MD, ...", "Source documents to ingest")
         ContainerDb(testdir, "test/ folder", "prompt.json, results/*.json, report.html", "Eval prompts + expected answers; generated results, metrics, mitigations, report")
         ContainerDb(adc, "ADC credentials", "~/.config/gcloud/...json", "OAuth2 refresh token (gcloud ADC login)")
+        Container_Ext(ollamasrv, "Ollama server", "localhost:11434", "Optional local backend (--backend ollama): gemma4 (or any pulled model) for generation, judging, and mitigations")
     }
 
     System_Boundary(gcp, "GCP project vallabha-systems-vle") {
@@ -72,8 +75,10 @@ C4Container
     Rel(evalmod, testdir, "Reads prompt.json, writes results + metrics")
     Rel(report, testdir, "Reads metrics.json, writes report.html")
     Rel(evalmod, judges, "Scores each case")
-    Rel(evalmod, gemini, "Answer generation + mitigations", "google-genai")
-    Rel(judges, gemini, "Judge calls", "litellm vertex_ai / google-genai")
+    Rel(evalmod, gemini, "Answer generation + mitigations (--backend vertex)", "google-genai")
+    Rel(judges, gemini, "Judge calls (--backend vertex)", "litellm vertex_ai / google-genai")
+    Rel(evalmod, ollamasrv, "Answer generation + mitigations (--backend ollama)", "litellm ollama_chat")
+    Rel(judges, ollamasrv, "Judge calls (--backend ollama)", "deepeval OllamaModel / litellm")
     Rel(sdk, adc, "Signs requests with")
     Rel(sdk, ragdata, "Corpus + file management", "gRPC")
     Rel(sdk, ragquery, "Retrieval queries", "gRPC")
@@ -219,6 +224,7 @@ sequenceDiagram
     CLI->>CLI: rag_report.generate() → test/report.html
     CLI-->>Dev: tabbed HTML report (Opik | DeepEval | Test Cases) with "How to fix" callouts
     Note over Dev,Judges: Mitigations are experimental — human judgement required before applying
+    Note over Gemini: With --backend ollama, every Gemini call above goes to local Ollama (default gemma4) instead — retrieval stays on Vertex AI RAG Engine
 ```
 
 ```mermaid
@@ -325,6 +331,27 @@ Artifacts land in `test/`:
 Metrics: answer relevance/relevancy, hallucination, faithfulness (DeepEval),
 context(ual) precision, and context(ual) recall. The generation and judge model is
 `gemini-3.5-flash` on Vertex AI (override with `VALLABHA_RAG_EVAL_MODEL`).
+
+#### Local model backend (Ollama)
+
+`test-run`, `test-eval`, `test-recommend`, and `test-all` accept `--backend` and
+`--model` to swap the cloud frontier model for a local Ollama model — no cloud LLM
+calls for generation, judging, or mitigations (document **retrieval still uses the
+Vertex AI RAG Engine corpus**, so ADC is still needed):
+
+```sh
+uv run rag test-all --backend ollama --open        # local gemma4 end to end
+uv run rag test-run --backend ollama --model gemma4
+uv run rag test-eval --backend ollama              # judge with local gemma4
+uv run rag test-run --backend vertex --model gemini-3-flash-preview   # other cloud model
+```
+
+Requires [Ollama](https://ollama.com) running locally with the model pulled
+(`ollama pull gemma4`). Defaults: backend `vertex`; ollama model `gemma4`;
+server `http://localhost:11434`. Env overrides: `VALLABHA_RAG_EVAL_BACKEND`,
+`VALLABHA_RAG_OLLAMA_MODEL`, `VALLABHA_RAG_OLLAMA_URL`. Note that small local
+models are noticeably weaker judges than frontier models — expect noisier scores
+and treat cross-backend comparisons with care.
 
 ## Defaults and overrides
 
