@@ -7,6 +7,11 @@ Built as a [uv](https://docs.astral.sh/uv/) Python project. Uses Application Def
 Credentials (ADC) and the RAG Engine **default** embedding model, chunking, and
 indexing strategies (no custom `TransformationConfig` is passed, so service defaults apply).
 
+Beyond corpus management, the CLI ships an **evaluation suite**: test prompts are
+answered via retrieval + Gemini generation, scored by **Opik** and **DeepEval**
+LLM-as-judge metrics, diagnosed into experimental `[SYSTEM]`/`[PROMPT]`-scoped
+tuning mitigations, and rendered into a tabbed HTML report.
+
 ---
 
 ## Architecture (C4 model)
@@ -15,17 +20,19 @@ indexing strategies (no custom `TransformationConfig` is passed, so service defa
 
 ```mermaid
 C4Context
-    title System Context — Vallabha VLE RAG ingestion
+    title System Context — Vallabha VLE RAG ingestion & evaluation
 
-    Person(user, "Developer / Operator", "Uploads documents and runs retrieval queries from the terminal")
+    Person(user, "Developer / Operator", "Uploads documents, runs retrieval queries, and evaluates RAG quality from the terminal")
 
-    System(ragcli, "vallabha-rag CLI", "uv-managed Python CLI (`uv run rag ...`) for corpus lifecycle: create, upload, list, query, delete")
+    System(ragcli, "vallabha-rag CLI", "uv-managed Python CLI (`uv run rag ...`): corpus lifecycle (create, upload, list, query, delete) + evaluation pipeline (test-run, test-eval, test-recommend, test-report)")
 
     System_Ext(vertex, "Vertex AI RAG Engine", "Google Cloud managed RAG service in europe-west4: parses, chunks, embeds, and indexes documents")
+    System_Ext(gemini, "Gemini on Vertex AI", "gemini-3.5-flash (global endpoint): grounded answer generation, LLM-as-judge scoring, and tuning-mitigation generation")
     System_Ext(gcloud, "Google Auth (ADC)", "Application Default Credentials issued via `gcloud auth application-default login`")
 
     Rel(user, ragcli, "Runs commands", "terminal")
     Rel(ragcli, vertex, "Creates corpus, uploads files, retrieves contexts", "gRPC / HTTPS")
+    Rel(ragcli, gemini, "Generates answers, judges metrics, drafts mitigations", "HTTPS")
     Rel(ragcli, gcloud, "Obtains OAuth2 access tokens", "local credential file")
 
     UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
@@ -40,21 +47,33 @@ C4Container
     Person(user, "Developer / Operator")
 
     System_Boundary(local, "Local machine (uv project)") {
-        Container(cli, "rag CLI", "Python 3.12, argparse", "Entry point `rag = rag_cli:main`; subcommands for corpus lifecycle")
+        Container(cli, "rag CLI", "Python 3.12, argparse, rag_cli.py", "Entry point `rag = rag_cli:main`; corpus lifecycle + test-* subcommands")
+        Container(evalmod, "Evaluation runner", "rag_eval.py", "run_prompts (retrieve+generate), evaluate (Opik+DeepEval scoring), recommend (scoped mitigations)")
+        Container(report, "Report generator", "rag_report.py", "Renders metrics.json into a self-contained tabbed HTML report")
         Container(sdk, "google-cloud-aiplatform SDK", "vertexai.rag module", "Wraps VertexRagDataService and VertexRagService gRPC APIs")
+        Container(judges, "Judge libraries", "opik + deepeval (via litellm / google-genai)", "LLM-as-judge metrics: relevance, hallucination, faithfulness, context precision/recall")
         ContainerDb(docs, "docs/ folder", "PDF, DOCX, TXT, MD, ...", "Source documents to ingest")
-        ContainerDb(adc, "ADC credentials", "~/.config/gcloud/...json", "OAuth2 refresh token for premnathkn@gmail.com")
+        ContainerDb(testdir, "test/ folder", "prompt.json, results/*.json, report.html", "Eval prompts + expected answers; generated results, metrics, mitigations, report")
+        ContainerDb(adc, "ADC credentials", "~/.config/gcloud/...json", "OAuth2 refresh token (gcloud ADC login)")
     }
 
-    System_Boundary(gcp, "GCP project vallabha-systems-vle (europe-west4)") {
-        Container(ragdata, "VertexRagDataService", "Vertex AI API", "CreateRagCorpus, UploadRagFile, ListRagFiles, Delete*")
-        Container(ragquery, "VertexRagService", "Vertex AI API", "RetrieveContexts (semantic search)")
-        ContainerDb(corpus, "RAG corpus 'vallabha-vle-docs'", "Managed vector store", "Default chunking (~1024 tokens) + default embedding model (text-embedding-005)")
+    System_Boundary(gcp, "GCP project vallabha-systems-vle") {
+        Container(ragdata, "VertexRagDataService", "Vertex AI API, europe-west4", "CreateRagCorpus, UploadRagFile, ListRagFiles, Delete*")
+        Container(ragquery, "VertexRagService", "Vertex AI API, europe-west4", "RetrieveContexts (semantic search)")
+        Container(gemini, "Gemini gemini-3.5-flash", "Vertex AI global endpoint", "Grounded generation, judge verdicts, mitigation drafting")
+        ContainerDb(corpus, "RAG corpus 'vallabha-vle-docs'", "Managed vector store", "Default chunking + default embedding model")
     }
 
     Rel(user, cli, "uv run rag <command>")
     Rel(cli, docs, "Reads files")
     Rel(cli, sdk, "Calls")
+    Rel(cli, evalmod, "test-run / test-eval / test-recommend")
+    Rel(cli, report, "test-report")
+    Rel(evalmod, testdir, "Reads prompt.json, writes results + metrics")
+    Rel(report, testdir, "Reads metrics.json, writes report.html")
+    Rel(evalmod, judges, "Scores each case")
+    Rel(evalmod, gemini, "Answer generation + mitigations", "google-genai")
+    Rel(judges, gemini, "Judge calls", "litellm vertex_ai / google-genai")
     Rel(sdk, adc, "Signs requests with")
     Rel(sdk, ragdata, "Corpus + file management", "gRPC")
     Rel(sdk, ragquery, "Retrieval queries", "gRPC")
@@ -78,22 +97,58 @@ C4Component
         Component(listing, "list-files / list-corpora", "cmd_list_*", "Inspection commands")
         Component(query, "query", "cmd_query", "retrieval_query with configurable --top-k")
         Component(deletion, "delete-file / delete-corpus", "cmd_delete_*", "Cleanup; corpus deletion requires --yes")
+        Component(testcmds, "test-run / test-eval / test-recommend / test-report / test-all", "cmd_test_*", "Evaluation pipeline stages; test-all chains all four")
     }
 
     System_Ext(vertex, "Vertex AI RAG Engine")
+    System_Ext(evalmod, "rag_eval.py + rag_report.py")
 
     Rel(parser, upload, "dispatches")
     Rel(parser, listing, "dispatches")
     Rel(parser, query, "dispatches")
     Rel(parser, deletion, "dispatches")
+    Rel(parser, testcmds, "dispatches")
     Rel(upload, collector, "collects paths")
     Rel(upload, corpushelpers, "ensures corpus")
     Rel(upload, vertex, "rag.upload_file")
     Rel(listing, vertex, "rag.list_files / list_corpora")
     Rel(query, vertex, "rag.retrieval_query")
     Rel(deletion, vertex, "rag.delete_file / delete_corpus")
+    Rel(testcmds, evalmod, "lazy import")
 
     UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+```
+
+### Level 3 — Components (evaluation subsystem)
+
+```mermaid
+C4Component
+    title Component view — rag_eval.py and rag_report.py
+
+    Container_Boundary(evalmod, "rag_eval.py") {
+        Component(runner, "run_prompts", "retrieval + generation", "Per prompt: retrieval_query (per-prompt top_k override supported) then grounded Gemini answer -> rag_results.json")
+        Component(scorer, "evaluate", "Opik + DeepEval scoring", "Opik: AnswerRelevance, Hallucination, ContextPrecision, ContextRecall. DeepEval: AnswerRelevancy, Faithfulness, ContextualPrecision, ContextualRecall, Hallucination -> metrics.json")
+        Component(recommender, "recommend", "experimental mitigations", "Flags scores outside the healthy band, diagnoses root cause (retrieval / generation / test-design / metric artifact), emits [SYSTEM] or [PROMPT] scoped fixes + run-level recommendations")
+    }
+
+    Container_Boundary(reportmod, "rag_report.py") {
+        Component(generator, "generate", "HTML renderer", "Tabs (Opik | DeepEval | Test Cases), score chips, 'How to fix' callouts, run-level recommendations, glossary + scope-legend + experimental-disclaimer footer")
+    }
+
+    System_Ext(ragquery, "VertexRagService (europe-west4)")
+    System_Ext(gemini, "Gemini gemini-3.5-flash (global)")
+    ComponentDb(artifacts, "test/ artifacts", "prompt.json, rag_results.json, metrics.json, report.html")
+
+    Rel(runner, ragquery, "RetrieveContexts(top_k)")
+    Rel(runner, gemini, "grounded answer generation")
+    Rel(scorer, gemini, "LLM-as-judge calls", "opik/litellm + deepeval/google-genai")
+    Rel(recommender, gemini, "root-cause diagnosis + mitigations")
+    Rel(runner, artifacts, "writes rag_results.json")
+    Rel(scorer, artifacts, "writes metrics.json")
+    Rel(recommender, artifacts, "augments metrics.json with mitigations")
+    Rel(generator, artifacts, "reads metrics.json, writes report.html")
+
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
 ```
 
 ### End-to-end flows
@@ -139,7 +194,7 @@ sequenceDiagram
     Dev->>CLI: uv run rag test-all --open
     CLI->>Eval: run_prompts()
     loop each prompt in test/prompt.json
-        Eval->>Query: RetrieveContexts(question, top_k)
+        Eval->>Query: RetrieveContexts(question, top_k — per-prompt "top_k" override wins)
         Query-->>Eval: top-k chunks
         Eval->>Gemini: generate grounded answer from chunks
         Gemini-->>Eval: answer
@@ -153,8 +208,17 @@ sequenceDiagram
         Judges-->>Eval: metric scores
     end
     Eval-->>CLI: test/results/metrics.json
+    CLI->>Eval: recommend()  (experimental)
+    loop each case with a low metric
+        Eval->>Gemini: diagnose root cause + draft mitigations
+        Gemini-->>Eval: [SYSTEM]/[PROMPT]-scoped fixes (or "metric artifact - no action")
+    end
+    Eval->>Gemini: synthesize run-level recommendations
+    Gemini-->>Eval: prioritized tuning actions
+    Eval-->>CLI: metrics.json + mitigations
     CLI->>CLI: rag_report.generate() → test/report.html
-    CLI-->>Dev: tabbed HTML report (Opik | DeepEval | Test Cases)
+    CLI-->>Dev: tabbed HTML report (Opik | DeepEval | Test Cases) with "How to fix" callouts
+    Note over Dev,Judges: Mitigations are experimental — human judgement required before applying
 ```
 
 ```mermaid
