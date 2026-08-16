@@ -18,3 +18,8 @@ wheels/
 
 # Open WebUI local secret (must never be committed)
 .webui_secret_key
+
+# Audio RAG local data (vector DB storage, generated transcripts, source audio)
+.chroma/
+transcripts/
+audio_samples/
